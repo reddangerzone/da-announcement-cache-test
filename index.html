@@ -1,10 +1,79 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DA Announcement Cache Test</title>
-<style>:root{color-scheme:dark;font-family:Arial,sans-serif}body{min-height:100vh;margin:0;display:grid;place-items:center;background:#11151d;color:#f7f3e8}main{width:min(900px,calc(100% - 32px));text-align:center}img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 20px 60px #0008}code{color:#62e6d5}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DA Announcement Controls</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
-<body><main><h1>DA announcement image cache test</h1><p>This image switches automatically at <strong>19:00 TCT</strong>.</p><img src="/announcement-test.svg" alt="Red is Testing Something"><p>Embed <code>/announcement-test.svg</code> in Torn.</p></main></body>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Delightful Assholes</p>
+      <h1>Announcement Controls</h1>
+      <p>All dates and times are TCT/UTC.</p>
+    </header>
+
+    <section id="login-panel" class="panel login-panel">
+      <h2>Leadership login</h2>
+      <form id="login-form">
+        <label for="password">Shared password</label>
+        <div class="inline">
+          <input id="password" type="password" autocomplete="current-password" required>
+          <button type="submit">Unlock</button>
+        </div>
+      </form>
+    </section>
+
+    <div id="controls" hidden>
+      <section class="panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">Ranked war</p><h2>Status and notes</h2></div>
+          <span id="save-state" aria-live="polite"></span>
+        </div>
+        <fieldset>
+          <legend>War status</legend>
+          <label class="choice"><input type="radio" name="war-label" value="negotiating"> Negotiating</label>
+          <label class="choice"><input type="radio" name="war-label" value="real"> Real</label>
+          <label class="choice"><input type="radio" name="war-label" value="termed"> Termed</label>
+        </fieldset>
+        <label for="notes">Leadership note</label>
+        <textarea id="notes" maxlength="300" rows="4" placeholder="Anything members need to know about this war…"></textarea>
+        <button id="save-controls" type="button">Save announcement controls</button>
+      </section>
+
+      <section class="panel">
+        <p class="eyebrow">Faction calendar</p>
+        <h2 id="event-form-title">Add an event</h2>
+        <form id="event-form">
+          <input id="event-index" type="hidden">
+          <label for="event-title">Title</label>
+          <input id="event-title" maxlength="80" required>
+          <div class="dates">
+            <div><label for="event-start">Starts (TCT)</label><input id="event-start" type="datetime-local" required></div>
+            <div><label for="event-end">Ends (TCT, optional)</label><input id="event-end" type="datetime-local"></div>
+          </div>
+          <label for="event-description">Description</label>
+          <textarea id="event-description" maxlength="300" rows="3"></textarea>
+          <div class="inline">
+            <button type="submit">Save event</button>
+            <button id="cancel-edit" class="secondary" type="button" hidden>Cancel edit</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <p class="eyebrow">Coming up</p>
+        <h2>Faction events</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Event</th><th>Starts (TCT)</th><th>Actions</th></tr></thead>
+            <tbody id="event-rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
 </html>
