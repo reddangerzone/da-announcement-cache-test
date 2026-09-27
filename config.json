@@ -1,0 +1,11 @@
+{
+  "faction_id": 50783,
+  "faction_name": "Delightful Assholes",
+  "lookahead_days": 21,
+  "matching_weekday": 1,
+  "matching_hour_tct": 5,
+  "max_events": 6,
+  "image_width": 900,
+  "image_height": 1200
+}
+
