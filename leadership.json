@@ -1,5 +1,12 @@
 {
   "war_label": "negotiating",
   "notes": "",
-  "events": []
+  "events": [
+    {
+      "title": "Halloween 50k!",
+      "starts_at": "2026-10-25T09:15:00Z",
+      "ends_at": "2026-11-01T09:15:00Z",
+      "description": "Dates are approximate and will be released in more detail as we get closer to the event"
+    }
+  ]
 }
