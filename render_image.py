@@ -11,6 +11,9 @@ from models import AnnouncementState
 
 ROOT = Path(__file__).resolve().parent
 SUNSHINE_ASSET = ROOT / "assets" / "DASunshine.png"
+if not SUNSHINE_ASSET.exists():
+    # GitHub's web uploader may place the asset at the repository root.
+    SUNSHINE_ASSET = ROOT / "DASunshine.png"
 
 BG = "#070b13"
 CARD = "#111827"
