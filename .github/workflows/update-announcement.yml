@@ -1,0 +1,45 @@
+name: Update faction announcement
+
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "leadership.json"
+      - "config.json"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate announcement
+        env:
+          FACTION_ID: "50783"
+          API_KEYS: ${{ secrets.TORN_API_KEYS }}
+        run: python main.py
+
+      - name: Commit changed image and state
+        run: |
+          git config user.name "DA Announcement Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add announcement.png state.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Update faction announcement"
+          git push
