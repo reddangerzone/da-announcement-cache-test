@@ -32,7 +32,7 @@ def opponent_for(war: dict[str, Any], faction_id: int) -> dict[str, Any] | None:
     )
 
 
-def next_matching_time(now: datetime, weekday: int = 1, hour: int = 5) -> datetime:
+def next_matching_time(now: datetime, weekday: int = 1, hour: int = 12) -> datetime:
     """Return the next weekday/hour in UTC (TCT), never a past timestamp."""
     now = now.astimezone(UTC)
     days = (weekday - now.weekday()) % 7
