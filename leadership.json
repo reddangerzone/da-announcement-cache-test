@@ -3,6 +3,12 @@
   "notes": "",
   "events": [
     {
+      "title": "Test event",
+      "starts_at": "2026-09-28T20:15:00Z",
+      "ends_at": "2026-09-28T20:15:00Z",
+      "description": "Test"
+    },
+    {
       "title": "Halloween 50k!",
       "starts_at": "2026-10-25T09:15:00Z",
       "ends_at": "2026-11-01T09:15:00Z",
