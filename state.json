@@ -1,7 +1,7 @@
 {
   "mode": "awaiting_matchmaking",
   "headline": "NEXT MATCHMAKING",
-  "target_at": "2026-09-29T05:00:00+00:00",
+  "target_at": "2026-09-29T12:00:00+00:00",
   "opponent_name": null,
   "opponent_id": null,
   "war_id": null,
@@ -45,6 +45,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-09-28T05:15:18.988989+00:00",
+  "generated_at": "2026-09-28T05:29:51.594053+00:00",
   "stale_reason": null
 }
