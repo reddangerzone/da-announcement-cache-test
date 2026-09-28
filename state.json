@@ -9,15 +9,6 @@
   "notes": "",
   "events": [
     {
-      "title": "Tourism Day",
-      "starts_at": "2026-09-27T00:00:00+00:00",
-      "ends_at": "2026-09-27T23:59:59+00:00",
-      "description": "Travel capacity doubled during this event",
-      "source": "torn",
-      "kind": "event",
-      "fixed_start_time": false
-    },
-    {
       "title": "CaffeineCon 2026",
       "starts_at": "2026-10-15T00:00:00+00:00",
       "ends_at": "2026-10-15T23:59:59+00:00",
@@ -45,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-09-27T21:59:19.108812+00:00",
+  "generated_at": "2026-09-28T00:30:58.889254+00:00",
   "stale_reason": null
 }
