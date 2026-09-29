@@ -1,12 +1,12 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
-  "opponent_name": null,
-  "opponent_id": null,
-  "war_id": null,
-  "war_label": null,
-  "notes": "We are not currently enlisted for a ranked war.",
+  "mode": "matched",
+  "headline": "NEXT RANKED WAR",
+  "target_at": "2026-10-02T13:00:00+00:00",
+  "opponent_name": "Valiance",
+  "opponent_id": 48835,
+  "war_id": 50147,
+  "war_label": "negotiating",
+  "notes": "Terms are still being negotiated. Watch Discord for the final war plan.",
   "events": [
     {
       "title": "CaffeineCon 2026",
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-09-29T12:01:01.889632+00:00",
+  "generated_at": "2026-09-29T12:15:17.588605+00:00",
   "stale_reason": null
 }
