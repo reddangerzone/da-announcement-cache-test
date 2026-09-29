@@ -20,9 +20,9 @@ class EnlistmentStatus:
 
 
 def previous_matching_cutoff(
-    now: datetime, weekday: int = 1, hour: int = 5
+    now: datetime, weekday: int = 1, hour: int = 12
 ) -> datetime:
-    """Return the latest Tuesday 05:00 UTC/TCT at or before ``now``."""
+    """Return the latest Tuesday 12:00 UTC/TCT at or before ``now``."""
     now = now.astimezone(UTC)
     days_since_weekday = (now.weekday() - weekday) % 7
     cutoff = (now - timedelta(days=days_since_weekday)).replace(
@@ -38,7 +38,7 @@ def parse_ranked_war_news(
 ) -> tuple[EnlistmentStatus, list[str]]:
     """Infer this matchmaking cycle's enlistment state from ranked-war news.
 
-    Only enlist/unenlist actions at or after the latest Tuesday 05:00 TCT
+    Only enlist/unenlist actions at or after the latest Tuesday 12:00 TCT
     cutoff participate. The newest qualifying action wins.
     """
     cutoff = previous_matching_cutoff(now)
