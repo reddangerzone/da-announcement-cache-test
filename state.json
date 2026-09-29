@@ -1,13 +1,31 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
+  "mode": "awaiting_matchmaking",
+  "headline": "NEXT MATCHMAKING",
+  "target_at": "2026-09-29T12:00:00+00:00",
   "opponent_name": null,
   "opponent_id": null,
   "war_id": null,
   "war_label": null,
-  "notes": "We are not currently enlisted for a ranked war.",
+  "notes": "",
   "events": [
+    {
+      "title": "CaffeineCon 2026",
+      "starts_at": "2026-10-15T00:00:00+00:00",
+      "ends_at": "2026-10-15T23:59:59+00:00",
+      "description": "Energy drink effects are doubled",
+      "source": "torn",
+      "kind": "event",
+      "fixed_start_time": false
+    },
+    {
+      "title": "Trick or Treat",
+      "starts_at": "2026-10-25T00:00:00+00:00",
+      "ends_at": "2026-11-01T23:59:59+00:00",
+      "description": "Dress up and attack others to fill your basket with treats",
+      "source": "torn",
+      "kind": "event",
+      "fixed_start_time": false
+    },
     {
       "title": "Halloween 50k!",
       "starts_at": "2026-10-25T09:15:00+00:00",
@@ -18,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-09-29T00:00:23.474315+00:00",
+  "generated_at": "2026-09-29T00:15:17.661235+00:00",
   "stale_reason": null
 }
