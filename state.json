@@ -5,8 +5,8 @@
   "opponent_name": "Valiance",
   "opponent_id": 48835,
   "war_id": 50147,
-  "war_label": "negotiating",
-  "notes": "Terms are still being negotiated. Watch Discord for the final war plan.",
+  "war_label": "real",
+  "notes": "Expect lots of flying again, consider finding a buddy outside of your stat range to travel with.",
   "events": [
     {
       "title": "CaffeineCon 2026",
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-09-29T19:15:17.063601+00:00",
+  "generated_at": "2026-09-29T19:21:31.571321+00:00",
   "stale_reason": null
 }
