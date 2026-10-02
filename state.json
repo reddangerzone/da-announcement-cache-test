@@ -1,5 +1,5 @@
 {
-  "mode": "stale",
+  "mode": "matched",
   "headline": "NEXT RANKED WAR",
   "target_at": "2026-10-02T13:00:00+00:00",
   "opponent_name": "Valiance",
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-02T00:00:23.224032+00:00",
-  "stale_reason": "Ranked-war API data was unavailable"
+  "generated_at": "2026-10-02T00:15:16.441967+00:00",
+  "stale_reason": null
 }
