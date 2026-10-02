@@ -1,6 +1,6 @@
 {
-  "mode": "matched",
-  "headline": "NEXT RANKED WAR",
+  "mode": "active_war",
+  "headline": "WAR IS LIVE",
   "target_at": "2026-10-02T13:00:00+00:00",
   "opponent_name": "Valiance",
   "opponent_id": 48835,
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-02T12:45:16.742680+00:00",
+  "generated_at": "2026-10-02T13:00:24.439586+00:00",
   "stale_reason": null
 }
