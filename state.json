@@ -1,12 +1,12 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
+  "mode": "awaiting_matchmaking",
+  "headline": "NEXT MATCHMAKING",
+  "target_at": "2026-10-06T12:00:00+00:00",
   "opponent_name": null,
   "opponent_id": null,
   "war_id": null,
   "war_label": null,
-  "notes": "Expect lots of flying again, consider finding a buddy outside of your stat range to travel with.",
+  "notes": "",
   "events": [
     {
       "title": "CaffeineCon 2026",
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-03T19:15:16.684324+00:00",
+  "generated_at": "2026-10-03T19:27:51.738252+00:00",
   "stale_reason": null
 }
