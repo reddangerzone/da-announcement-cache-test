@@ -1,11 +1,11 @@
 {
-  "mode": "active_war",
-  "headline": "WAR IS LIVE",
-  "target_at": "2026-10-02T13:00:00+00:00",
-  "opponent_name": "Valiance",
-  "opponent_id": 48835,
-  "war_id": 50147,
-  "war_label": "real",
+  "mode": "not_enlisted",
+  "headline": "NEXT ENLISTMENT",
+  "target_at": null,
+  "opponent_name": null,
+  "opponent_id": null,
+  "war_id": null,
+  "war_label": null,
   "notes": "Expect lots of flying again, consider finding a buddy outside of your stat range to travel with.",
   "events": [
     {
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-03T14:45:16.080479+00:00",
+  "generated_at": "2026-10-03T15:00:20.560668+00:00",
   "stale_reason": null
 }
