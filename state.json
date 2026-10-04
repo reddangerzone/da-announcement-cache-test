@@ -1,12 +1,12 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
+  "mode": "awaiting_matchmaking",
+  "headline": "NEXT MATCHMAKING",
+  "target_at": "2026-10-06T12:00:00+00:00",
   "opponent_name": null,
   "opponent_id": null,
   "war_id": null,
   "war_label": null,
-  "notes": "We are not currently enlisted for a ranked war.",
+  "notes": "",
   "events": [
     {
       "title": "CaffeineCon 2026",
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-04T00:00:30.752594+00:00",
+  "generated_at": "2026-10-04T00:15:14.821488+00:00",
   "stale_reason": null
 }
