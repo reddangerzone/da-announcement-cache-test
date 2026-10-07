@@ -5,8 +5,8 @@
   "opponent_name": "Galactic Arcade",
   "opponent_id": 44040,
   "war_id": 50646,
-  "war_label": "negotiating",
-  "notes": "Terms are still being negotiated. Watch Discord for the final war plan.",
+  "war_label": "termed",
+  "notes": "6.5k to us, 18.5k to them\nOnliners only, no flying, med out deals encouraged. Try to have some grace if you get hit while online, shit happens.",
   "events": [
     {
       "title": "CaffeineCon 2026",
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-07T14:45:16.214805+00:00",
+  "generated_at": "2026-10-07T15:00:25.512875+00:00",
   "stale_reason": null
 }
