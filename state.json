@@ -1,5 +1,5 @@
 {
-  "mode": "matched",
+  "mode": "stale",
   "headline": "NEXT RANKED WAR",
   "target_at": "2026-10-09T15:00:00+00:00",
   "opponent_name": "Galactic Arcade",
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-08T23:45:15.609732+00:00",
-  "stale_reason": null
+  "generated_at": "2026-10-09T00:00:25.023568+00:00",
+  "stale_reason": "Ranked-war API data was unavailable"
 }
