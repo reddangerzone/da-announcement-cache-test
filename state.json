@@ -6,7 +6,7 @@
   "opponent_id": 44040,
   "war_id": 50646,
   "war_label": "termed",
-  "notes": "6.5k to us, 18.5k to them\nOnliners only, no flying, med out deals encouraged. Try to have some grace if you get hit while online, shit happens.",
+  "notes": "6.1k to us, 18.5k to them\nOnliners only, no flying, med out deals encouraged. Try to have some grace if you get hit while online, shit happens.",
   "events": [
     {
       "title": "CaffeineCon 2026",
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-09T17:30:22.380179+00:00",
+  "generated_at": "2026-10-09T17:45:15.660754+00:00",
   "stale_reason": null
 }
