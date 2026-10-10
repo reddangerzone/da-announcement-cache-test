@@ -1,11 +1,11 @@
 {
-  "mode": "active_war",
-  "headline": "WAR IS LIVE",
-  "target_at": "2026-10-09T15:00:00+00:00",
-  "opponent_name": "Galactic Arcade",
-  "opponent_id": 44040,
-  "war_id": 50646,
-  "war_label": "termed",
+  "mode": "not_enlisted",
+  "headline": "NEXT ENLISTMENT",
+  "target_at": null,
+  "opponent_name": null,
+  "opponent_id": null,
+  "war_id": null,
+  "war_label": null,
   "notes": "6.1k to us, 18.5k to them\nOnliners only, no flying, med out deals encouraged. Try to have some grace if you get hit while online, shit happens.",
   "events": [
     {
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-10T15:45:15.879609+00:00",
+  "generated_at": "2026-10-10T16:00:21.461027+00:00",
   "stale_reason": null
 }
