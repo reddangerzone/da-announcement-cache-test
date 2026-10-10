@@ -1,5 +1,5 @@
 {
-  "mode": "active_war",
+  "mode": "stale",
   "headline": "WAR IS LIVE",
   "target_at": "2026-10-09T15:00:00+00:00",
   "opponent_name": "Galactic Arcade",
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-09T23:45:16.121075+00:00",
-  "stale_reason": null
+  "generated_at": "2026-10-10T00:00:24.464418+00:00",
+  "stale_reason": "Ranked-war API data was unavailable"
 }
