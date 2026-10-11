@@ -1,5 +1,5 @@
 {
-  "mode": "not_enlisted",
+  "mode": "stale",
   "headline": "NEXT ENLISTMENT",
   "target_at": null,
   "opponent_name": null,
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-10T23:52:50.918563+00:00",
-  "stale_reason": null
+  "generated_at": "2026-10-11T00:00:27.890422+00:00",
+  "stale_reason": "Ranked-war API data was unavailable"
 }
