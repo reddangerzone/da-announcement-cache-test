@@ -1,11 +1,11 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
-  "opponent_name": null,
-  "opponent_id": null,
-  "war_id": null,
-  "war_label": null,
+  "mode": "matched",
+  "headline": "NEXT RANKED WAR",
+  "target_at": "2026-10-15T15:00:00+00:00",
+  "opponent_name": "Chaos Theory",
+  "opponent_id": 44092,
+  "war_id": 51068,
+  "war_label": "termed",
   "notes": "6.1k to us, 18.5k to them\nOnliners only, no flying, med out deals encouraged. Try to have some grace if you get hit while online, shit happens.",
   "events": [
     {
@@ -36,6 +36,6 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-13T12:00:24.295325+00:00",
+  "generated_at": "2026-10-13T12:15:19.433050+00:00",
   "stale_reason": null
 }
