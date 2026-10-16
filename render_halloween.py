@@ -19,6 +19,7 @@ BLUE = "#40b9ff"
 PINK = "#f472aa"
 GOLD = "#ffd36a"
 BACKGROUND_ASSET = Path(__file__).resolve().parent / "assets" / "halloween-watch.png"
+FROZEN_SUNSHINE_ASSET = Path(__file__).resolve().parent / "assets" / "DASunshine-frozen.png"
 
 
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
@@ -80,6 +81,20 @@ def moon(draw: ImageDraw.ImageDraw) -> None:
     draw.arc((70, 76, 104, 105), 20, 160, fill="#2c5677", width=3)
 
 
+def place_frozen_sunshine(canvas: Image.Image, box: tuple[int, int, int, int]) -> None:
+    if not FROZEN_SUNSHINE_ASSET.exists():
+        moon(ImageDraw.Draw(canvas))
+        return
+    sunshine = Image.open(FROZEN_SUNSHINE_ASSET).convert("RGBA")
+    alpha_box = sunshine.getchannel("A").getbbox()
+    if alpha_box:
+        sunshine = sunshine.crop(alpha_box)
+    sunshine.thumbnail((box[2] - box[0], box[3] - box[1]), Image.Resampling.LANCZOS)
+    x = box[0] + ((box[2] - box[0]) - sunshine.width) // 2
+    y = box[1] + ((box[3] - box[1]) - sunshine.height) // 2
+    canvas.alpha_composite(sunshine, (x, y))
+
+
 def pace_text(state: AnnouncementState) -> str:
     if not state.chain_rate_per_hour:
         return "GATHERING PACE DATA…"
@@ -109,7 +124,8 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
     draw = ImageDraw.Draw(canvas)
 
     draw.rounded_rectangle((35, 37, width - 35, 238), 24, fill="#030914d9", outline="#668aab", width=2)
-    moon(draw)
+    place_frozen_sunshine(canvas, (47, 40, 137, 130))
+    draw = ImageDraw.Draw(canvas)
     draw.text((150, 57), "DELIGHTFUL ASSHOLES", font=font(22, True), fill=GOLD)
     headline = "AND NOW OUR WATCH BEGINS"
     draw.text((width//2, 148), headline, font=fitted(draw, headline, 49, 30, width-95),
