@@ -1,50 +1,40 @@
 from __future__ import annotations
 
-import math
 from datetime import UTC, datetime
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 from models import AnnouncementState
 
-BG = "#050914"
-CARD = "#0d1728"
-CARD_2 = "#111e33"
-BORDER = "#315275"
-TEXT = "#f4f8ff"
-MUTED = "#9fb2ca"
-ICE = "#9eeaff"
-BLUE = "#40b9ff"
-PINK = "#f472aa"
-GOLD = "#ffd36a"
-BACKGROUND_ASSET = Path(__file__).resolve().parent / "assets" / "halloween-watch-v3.png"
-FROZEN_SUNSHINE_ASSET = Path(__file__).resolve().parent / "assets" / "DASunshine-frozen.png"
+
+ROOT = Path(__file__).resolve().parent
+TEMPLATE = ROOT / "assets" / "nights-watch-template.jpg"
+FROZEN_SUNSHINE = ROOT / "assets" / "DASunshine-frozen.png"
+
+WHITE = "#f6fbff"
+ICE = "#8feaff"
+PALE_ICE = "#d9f7ff"
+MUTED = "#a8c1d7"
+PINK = "#ed7fb7"
+GOLD = "#ffd875"
+INK = "#050a13"
 
 
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
-    candidates = [
+    candidates = (
         "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf" if bold
         else "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold
         else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-    ]
+    )
     for candidate in candidates:
         if Path(candidate).exists():
             return ImageFont.truetype(candidate, size)
     return ImageFont.load_default()
 
 
-def fitted(draw: ImageDraw.ImageDraw, text: str, maximum: int, minimum: int, width: int):
-    for size in range(maximum, minimum - 1, -2):
-        face = font(size, True)
-        bounds = draw.textbbox((0, 0), text, font=face)
-        if bounds[2] - bounds[0] <= width:
-            return face
-    return font(minimum, True)
-
-
-def gothic_font(size: int) -> ImageFont.FreeTypeFont:
+def gothic(size: int) -> ImageFont.FreeTypeFont:
     for candidate in (
         "/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Bold.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
@@ -54,203 +44,152 @@ def gothic_font(size: int) -> ImageFont.FreeTypeFont:
     return font(size, True)
 
 
-def fitted_gothic(draw: ImageDraw.ImageDraw, text: str, maximum: int, minimum: int, width: int):
-    for size in range(maximum, minimum - 1, -2):
-        face = gothic_font(size)
-        bounds = draw.textbbox((0, 0), text, font=face)
-        if bounds[2] - bounds[0] <= width:
+def fitted(draw: ImageDraw.ImageDraw, text: str, maximum: int, minimum: int,
+           width: int, *, serif: bool = False) -> ImageFont.FreeTypeFont:
+    for size in range(maximum, minimum - 1, -1):
+        face = gothic(size) if serif else font(size, True)
+        box = draw.textbbox((0, 0), text, font=face)
+        if box[2] - box[0] <= width:
             return face
-    return gothic_font(minimum)
+    return gothic(minimum) if serif else font(minimum, True)
 
 
-def glow(canvas: Image.Image, center: tuple[int, int], color: tuple[int, int, int], radius: int) -> None:
-    layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(layer)
-    x, y = center
-    draw.ellipse((x-radius, y-radius, x+radius, y+radius), fill=(*color, 75))
-    canvas.alpha_composite(layer.filter(ImageFilter.GaussianBlur(radius // 2)))
+def shadow_text(draw: ImageDraw.ImageDraw, xy: tuple[int, int], text: str,
+                face: ImageFont.FreeTypeFont, fill: str, *, anchor: str = "la",
+                shadow: int = 3) -> None:
+    x, y = xy
+    draw.text((x + shadow, y + shadow), text, font=face, fill=INK, anchor=anchor,
+              stroke_width=2, stroke_fill=INK)
+    draw.text((x, y), text, font=face, fill=fill, anchor=anchor,
+              stroke_width=1, stroke_fill="#153349")
 
 
-def glass_card(canvas: Image.Image, box: tuple[int, int, int, int], accent: str = ICE) -> None:
-    """Draw a translucent frozen panel with an uneven melting ice cap."""
-    layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(layer)
-    x1, y1, x2, y2 = box
-    draw.rounded_rectangle(box, 22, fill=(3, 11, 24, 210), outline=(78, 119, 154, 235), width=3)
-    draw.line((x1 + 24, y1 + 2, x2 - 24, y1 + 2), fill=accent, width=4)
-    # Uneven frost shelf and downward melt/icicle shapes.
-    draw.line((x1 + 32, y1 + 8, x2 - 32, y1 + 8), fill=(208, 247, 255, 105), width=5)
-    span = max(80, x2 - x1 - 80)
-    for index, depth in enumerate((13, 24, 10, 31, 17, 26, 12)):
-        x = x1 + 44 + (index * 97) % span
-        if x < x2 - 34:
-            draw.polygon(((x - 7, y1 + 7), (x + 8, y1 + 7), (x + 1, y1 + depth)),
-                         fill=(185, 239, 255, 150))
-    draw.ellipse((x1 + 18, y2 - 8, x1 + 27, y2 + 2), fill=(122, 211, 237, 105))
-    draw.ellipse((x2 - 28, y2 - 5, x2 - 20, y2 + 4), fill=(122, 211, 237, 90))
-    canvas.alpha_composite(layer)
-
-
-def glass_row(canvas: Image.Image, box: tuple[int, int, int, int]) -> None:
-    layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(layer)
-    draw.rounded_rectangle(box, 16, fill=(8, 22, 40, 174), outline=(65, 112, 151, 215), width=2)
-    draw.line((box[0] + 18, box[1] + 2, box[2] - 18, box[1] + 2), fill=(190, 239, 255, 75), width=2)
-    canvas.alpha_composite(layer)
-
-
-def frozen_frame(draw: ImageDraw.ImageDraw, width: int, height: int) -> None:
-    draw.rounded_rectangle((7, 7, width-8, height-8), 32, outline="#02050c", width=12)
-    draw.rounded_rectangle((13, 13, width-14, height-14), 28, outline="#527da4", width=4)
-    draw.rounded_rectangle((20, 20, width-21, height-21), 23, outline="#142c48", width=8)
-    draw.line((33, 27, width-33, 27), fill=ICE, width=3)
-    draw.line((27, 34, 27, height-34), fill="#4287b7", width=3)
-    draw.line((width-27, 34, width-27, height-34), fill=PINK, width=2)
-    for x in range(48, width-35, 83):
-        length = 10 + (x * 7) % 23
-        draw.polygon(((x, 28), (x+13, 28), (x+5, 28+length)), fill="#b9f1ff")
-
-
-def moon(draw: ImageDraw.ImageDraw) -> None:
-    draw.ellipse((48, 45, 126, 123), fill="#dff8ff", outline=ICE, width=4)
-    for angle in range(0, 360, 45):
-        rad = math.radians(angle)
-        x1, y1 = 87 + math.cos(rad)*44, 84 + math.sin(rad)*44
-        x2, y2 = 87 + math.cos(rad)*55, 84 + math.sin(rad)*55
-        draw.line((x1, y1, x2, y2), fill=ICE, width=4)
-    draw.arc((65, 69, 83, 87), 195, 345, fill="#2c5677", width=3)
-    draw.arc((91, 69, 109, 87), 195, 345, fill="#2c5677", width=3)
-    draw.arc((70, 76, 104, 105), 20, 160, fill="#2c5677", width=3)
-
-
-def place_frozen_sunshine(canvas: Image.Image, box: tuple[int, int, int, int]) -> None:
-    if not FROZEN_SUNSHINE_ASSET.exists():
-        moon(ImageDraw.Draw(canvas))
+def place_asset(canvas: Image.Image, path: Path,
+                box: tuple[int, int, int, int]) -> None:
+    if not path.exists():
         return
-    sunshine = Image.open(FROZEN_SUNSHINE_ASSET).convert("RGBA")
-    alpha_box = sunshine.getchannel("A").getbbox()
+    asset = Image.open(path).convert("RGBA")
+    alpha_box = asset.getchannel("A").getbbox()
     if alpha_box:
-        sunshine = sunshine.crop(alpha_box)
-    sunshine.thumbnail((box[2] - box[0], box[3] - box[1]), Image.Resampling.LANCZOS)
-    x = box[0] + ((box[2] - box[0]) - sunshine.width) // 2
-    y = box[1] + ((box[3] - box[1]) - sunshine.height) // 2
-    canvas.alpha_composite(sunshine, (x, y))
+        asset = asset.crop(alpha_box)
+    asset.thumbnail((box[2] - box[0], box[3] - box[1]), Image.Resampling.LANCZOS)
+    x = box[0] + ((box[2] - box[0]) - asset.width) // 2
+    y = box[1] + ((box[3] - box[1]) - asset.height) // 2
+    canvas.alpha_composite(asset, (x, y))
 
 
-def pace_text(state: AnnouncementState) -> str:
+def bevel_row(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int]) -> None:
+    x1, y1, x2, y2 = box
+    draw.rounded_rectangle(box, 10, fill=(6, 17, 32, 230), outline="#4a7797", width=2)
+    draw.line((x1 + 12, y1 + 3, x2 - 12, y1 + 3), fill="#a7eaff", width=2)
+    draw.line((x1 + 12, y2 - 3, x2 - 12, y2 - 3), fill="#07101e", width=2)
+
+
+def rate_text(state: AnnouncementState) -> str:
     if not state.chain_rate_per_hour:
-        return "GATHERING PACE DATA…"
-    return f"{state.chain_rate_per_hour:,.0f} HITS / HOUR"
+        return "CALCULATING"
+    return f"{state.chain_rate_per_hour:,.0f} HITS / HR"
 
 
-def finish_text(state: AnnouncementState) -> str:
-    if not state.chain_estimated_finish:
-        return "ESTIMATED FINISH: CALCULATING"
-    finish = state.chain_estimated_finish.astimezone(UTC)
-    return f"ESTIMATED FINISH: {finish:%d %b · %H:%M TCT}"
-
-
-def render_halloween(state: AnnouncementState, destination: Path, width: int, height: int) -> None:
+def render_halloween(state: AnnouncementState, destination: Path,
+                     width: int, height: int) -> None:
     if (width, height) != (900, 1200):
-        raise ValueError("The Halloween renderer currently requires a 900×1200 canvas")
+        raise ValueError("The Halloween renderer requires a 900×1200 canvas")
+    if not TEMPLATE.exists():
+        raise FileNotFoundError(f"Missing Halloween template: {TEMPLATE}")
+
+    canvas = ImageOps.fit(
+        Image.open(TEMPLATE).convert("RGBA"),
+        (width, height),
+        Image.Resampling.LANCZOS,
+    )
+    draw = ImageDraw.Draw(canvas)
     now = state.generated_at or datetime.now(UTC)
-    if BACKGROUND_ASSET.exists():
-        background = Image.open(BACKGROUND_ASSET).convert("RGBA")
-        canvas = ImageOps.fit(background, (width, height), Image.Resampling.LANCZOS)
-        veil = Image.new("RGBA", (width, height), (2, 7, 16, 74))
-        canvas.alpha_composite(veil)
-    else:
-        canvas = Image.new("RGBA", (width, height), BG)
-        glow(canvas, (130, 120), (54, 173, 255), 225)
-        glow(canvas, (760, 1030), (113, 48, 145), 260)
-    draw = ImageDraw.Draw(canvas)
 
-    glass_card(canvas, (35, 37, width - 35, 238), ICE)
+    # Preserve the original cinematic composition, but replace its generic mascot
+    # with the faction's own frozen sunshine.
+    place_asset(canvas, FROZEN_SUNSHINE, (31, 27, 181, 183))
     draw = ImageDraw.Draw(canvas)
-    place_frozen_sunshine(canvas, (47, 40, 137, 130))
-    draw = ImageDraw.Draw(canvas)
-    draw.text((150, 57), "DELIGHTFUL ASSHOLES", font=font(22, True), fill=GOLD)
-    headline = "AND NOW OUR WATCH BEGINS"
-    headline_face = fitted_gothic(draw, headline, 49, 30, width-95)
-    draw.text((width//2 + 3, 152), headline, font=headline_face, fill="#00040b", anchor="mm")
-    draw.text((width//2, 148), headline, font=headline_face, fill=TEXT, anchor="mm")
-    draw.text((width//2, 195), "2026 NIGHT’S WATCH 50K", font=gothic_font(21), fill=ICE, anchor="mm")
-    draw.line((48, 226, width-48, 226), fill=ICE, width=3)
-    draw.line((48, 231, 475, 231), fill=PINK, width=2)
+    shadow_text(draw, (182, 52), "DELIGHTFUL", font(34, True), PINK)
+    shadow_text(draw, (182, 93), "ASSHOLES", font(34, True), ICE)
+    shadow_text(
+        draw,
+        (450, 185),
+        "AND NOW OUR WATCH BEGINS",
+        fitted(draw, "AND NOW OUR WATCH BEGINS", 43, 27, 790, serif=True),
+        WHITE,
+        anchor="mm",
+    )
 
-    hero = (38, 270, width-38, 610)
-    glass_card(canvas, hero, ICE)
-    draw = ImageDraw.Draw(canvas)
-    # Hairline fractures keep the data card readable while making it feel less pristine.
-    for points in (
-        ((58, 291), (89, 319), (76, 347), (111, 377)),
-        ((841, 290), (814, 324), (829, 352), (796, 381)),
-        ((70, 584), (96, 563), (86, 542)),
-    ):
-        draw.line(points, fill="#274761", width=2)
     current = max(0, state.chain_current)
     target = max(1, state.chain_target)
     percent = min(100.0, current / target * 100)
-    hits = f"{current:,} / {target:,} HITS"
-    draw.text((width//2, 338), hits, font=fitted(draw, hits, 60, 38, width-120), fill=TEXT, anchor="mm")
-    track = (90, 405, width-90, 466)
-    draw.rounded_rectangle(track, 28, fill="#050b15", outline="#477094", width=3)
-    fill_width = int((track[2]-track[0]) * percent / 100)
-    if fill_width:
-        draw.rounded_rectangle((track[0], track[1], track[0]+max(20, fill_width), track[3]),
-                               28, fill=BLUE, outline=ICE, width=2)
-        edge = track[0] + max(20, fill_width)
-        for offset in (28, 74, 121):
-            x = track[0] + offset
-            if x < edge - 8:
-                draw.line((x, track[1]+8, x+18, track[3]-8), fill="#bcefff", width=2)
-        if edge < track[2] - 8:
-            draw.polygon(((edge-13, track[3]-2), (edge+2, track[3]-2), (edge-5, track[3]+16)), fill=ICE)
-    draw.text((width//2, 507), f"{percent:.1f}% COMPLETE", font=font(31, True), fill=ICE, anchor="mm")
-    draw.text((width//2, 557), pace_text(state), font=font(21, True), fill=MUTED, anchor="mm")
 
-    # Top hitters.
-    left = (38, 645, 548, 1080)
-    right = (570, 645, width-38, 1080)
-    glass_card(canvas, left, GOLD)
-    glass_card(canvas, right, PINK)
-    draw = ImageDraw.Draw(canvas)
-    draw.text((64, 681), "TOP HITTERS", font=gothic_font(27), fill=GOLD)
+    shadow_text(draw, (450, 350), "2026 NIGHT’S WATCH 50K", gothic(31), PALE_ICE,
+                anchor="mm")
+    hit_text = f"{current:,} / {target:,}"
+    shadow_text(draw, (450, 441), hit_text,
+                fitted(draw, hit_text, 72, 45, 730), WHITE, anchor="mm")
+    draw.text((450, 491), "CHAIN HITS", font=font(19, True), fill=MUTED, anchor="mm")
+
+    # The template provides the dimensional frozen track; this is the live fill.
+    track = (92, 579, 808, 642)
+    inner = (track[0] + 10, track[1] + 11, track[2] - 10, track[3] - 11)
+    fill_width = int((inner[2] - inner[0]) * percent / 100)
+    if fill_width > 0:
+        fill_right = min(inner[2], inner[0] + max(20, fill_width))
+        draw.rounded_rectangle(
+            (inner[0], inner[1], fill_right, inner[3]),
+            19,
+            fill="#36bfe0",
+            outline="#c6f8ff",
+            width=2,
+        )
+        draw.line((inner[0] + 12, inner[1] + 4, fill_right - 9, inner[1] + 4),
+                  fill="#e1fbff", width=2)
+    shadow_text(draw, (450, 686), f"{percent:.1f}% COMPLETE", font(27, True), ICE,
+                anchor="mm", shadow=2)
+
+    # Lower left: the exact recognition block from the original model.
+    draw.text((79, 760), "TOP HITTERS", font=gothic(27), fill=GOLD)
     hitters = state.chain_top_hitters[:3]
-    if not hitters:
-        draw.text((64, 755), "Waiting for contributor data…", font=font(19), fill=MUTED)
-    else:
-        medals = (GOLD, "#d8e4ef", "#d58a55")
-        y = 742
+    if hitters:
+        medals = (GOLD, "#dce9f3", "#d8945f")
+        y = 810
         for rank, hitter in enumerate(hitters, 1):
-            glass_row(canvas, (62, y, 522, y+82))
-            draw = ImageDraw.Draw(canvas)
-            draw.ellipse((80, y+17, 128, y+65), fill="#162943", outline=medals[rank-1], width=3)
-            draw.text((104, y+41), str(rank), font=font(20, True), fill=medals[rank-1], anchor="mm")
+            bevel_row(draw, (74, y, 438, y + 61))
+            draw.ellipse((88, y + 10, 129, y + 51), fill="#13263d",
+                         outline=medals[rank - 1], width=3)
+            draw.text((108, y + 31), str(rank), font=font(18, True),
+                      fill=medals[rank - 1], anchor="mm")
             name = str(hitter.get("name", "Unknown"))
-            draw.text((146, y+41), name, font=fitted(draw, name, 22, 15, 245), fill=TEXT, anchor="lm")
-            draw.text((497, y+41), f"{int(hitter.get('hits', 0)):,}", font=font(21, True),
-                      fill=ICE, anchor="rm")
-            y += 99
+            draw.text((143, y + 30), name,
+                      font=fitted(draw, name, 19, 13, 180), fill=WHITE, anchor="lm")
+            draw.text((422, y + 30), f"{int(hitter.get('hits', 0)):,}",
+                      font=font(18, True), fill=ICE, anchor="rm")
+            y += 76
+    else:
+        draw.text((79, 824), "Waiting for contributor data…", font=font(17), fill=MUTED)
 
-    draw.text((596, 681), "CHAIN FORECAST", font=fitted_gothic(draw, "CHAIN FORECAST", 24, 18, 240), fill=PINK)
-    draw.text((596, 754), "CURRENT PACE", font=font(15, True), fill=MUTED)
-    rate = "CALCULATING" if not state.chain_rate_per_hour else f"{state.chain_rate_per_hour:,.0f} / HR"
-    draw.text((596, 786), rate, font=fitted(draw, rate, 26, 18, 230), fill=ICE)
-    draw.line((596, 835, 810, 835), fill=BORDER, width=2)
-    draw.text((596, 870), "ESTIMATED FINISH", font=font(15, True), fill=MUTED)
+    # The original Upcoming card becomes the only functional change: live forecast.
+    draw.text((493, 760), "CHAIN FORECAST", font=gothic(25), fill=PINK)
+    draw.text((493, 818), "CURRENT PACE", font=font(13, True), fill=MUTED)
+    draw.text((493, 849), rate_text(state),
+              font=fitted(draw, rate_text(state), 25, 17, 320), fill=ICE)
+    draw.line((493, 887, 813, 887), fill="#466c88", width=2)
+    draw.text((493, 907), "ESTIMATED FINISH", font=font(13, True), fill=MUTED)
     if state.chain_estimated_finish:
         finish = state.chain_estimated_finish.astimezone(UTC)
-        draw.text((596, 904), finish.strftime("%d %b"), font=font(29, True), fill=TEXT)
-        draw.text((596, 947), finish.strftime("%H:%M TCT"), font=font(23, True), fill=ICE)
+        draw.text((493, 936), finish.strftime("%d %b · %H:%M TCT"),
+                  font=fitted(draw, finish.strftime("%d %b · %H:%M TCT"), 23, 16, 320),
+                  fill=WHITE)
     else:
-        draw.text((596, 910), "GATHERING", font=font(22, True), fill=TEXT)
-        draw.text((596, 946), "PACE DATA…", font=font(22, True), fill=ICE)
+        draw.text((493, 936), "GATHERING PACE DATA…", font=font(18, True), fill=WHITE)
+    draw.text((493, 985), "LAST UPDATE", font=font(13, True), fill=MUTED)
+    draw.text((493, 1011), now.strftime("%d %b · %H:%M TCT"),
+              font=font(18, True), fill=ICE)
 
-    draw.rounded_rectangle((38, 1110, 338, 1147), 16, fill="#17263c", outline=BLUE, width=1)
-    draw.text((58, 1120), "AUTOMATED FACTION UPDATE", font=font(13, True), fill=ICE)
-    draw.text((width-48, 1129), f"Updated {now:%d %b · %H:%M TCT}",
-              font=font(14), fill=MUTED, anchor="rm")
-    frozen_frame(draw, width, height)
+    draw.text((450, 1137), "AUTOMATED FACTION UPDATE", font=font(15, True),
+              fill=PALE_ICE, anchor="mm")
     destination.parent.mkdir(parents=True, exist_ok=True)
     canvas.convert("RGB").save(destination, format="PNG", optimize=True)
