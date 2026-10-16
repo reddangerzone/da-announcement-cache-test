@@ -125,7 +125,7 @@ def render_halloween(state: AnnouncementState, destination: Path,
 
     # The headline is fixed artwork; only the chain information below is dynamic.
     if HEADER.exists():
-        canvas.alpha_composite(Image.open(HEADER).convert("RGBA"), (0, 15))
+        canvas.alpha_composite(Image.open(HEADER).convert("RGBA"), (0, 0))
     else:
         place_asset(canvas, FROZEN_SUNSHINE, (31, 27, 181, 183))
         draw = ImageDraw.Draw(canvas)
