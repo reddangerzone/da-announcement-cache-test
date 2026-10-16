@@ -8,6 +8,7 @@ on:
     paths:
       - "leadership.json"
       - "config.json"
+      - "*.py"
 
 permissions:
   contents: write
