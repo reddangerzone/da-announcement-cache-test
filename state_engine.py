@@ -117,7 +117,7 @@ def stale_state(previous: AnnouncementState | None, now: datetime, reason: str) 
         data["generated_at"] = now.astimezone(UTC)
         data["stale_reason"] = reason
         data["events"] = previous.events
-        for key in ("target_at", "generated_at"):
+        for key in ("target_at", "generated_at", "chain_estimated_finish"):
             if isinstance(data[key], str):
                 data[key] = datetime.fromisoformat(data[key])
         return AnnouncementState(**data)
