@@ -6,7 +6,7 @@
   "opponent_id": null,
   "war_id": null,
   "war_label": null,
-  "notes": "Us to win - 21k R goal, onliners only, med out deals encouraged",
+  "notes": "HALLOWEEN CHAIN SOOOOOON!",
   "events": [
     {
       "title": "Trick or Treat",
@@ -45,7 +45,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-16T16:45:16.801727+00:00",
+  "generated_at": "2026-10-16T16:56:36.328304+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
