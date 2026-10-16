@@ -4,7 +4,6 @@ from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from typing import Any, Literal
 
-
 WarLabel = Literal["negotiating", "real", "termed"]
 
 
@@ -27,13 +26,7 @@ class CalendarEvent:
 
 @dataclass(frozen=True)
 class AnnouncementState:
-    mode: Literal[
-        "active_war",
-        "matched",
-        "awaiting_matchmaking",
-        "not_enlisted",
-        "stale",
-    ]
+    mode: Literal["active_war", "matched", "awaiting_matchmaking", "not_enlisted", "stale"]
     headline: str
     target_at: datetime | None = None
     opponent_name: str | None = None
@@ -44,11 +37,18 @@ class AnnouncementState:
     events: tuple[CalendarEvent, ...] = field(default_factory=tuple)
     generated_at: datetime | None = None
     stale_reason: str | None = None
+    halloween_active: bool = False
+    chain_current: int = 0
+    chain_target: int = 50_000
+    chain_rate_per_hour: float | None = None
+    chain_estimated_finish: datetime | None = None
+    chain_top_hitters: tuple[dict[str, Any], ...] = field(default_factory=tuple)
 
     def to_dict(self) -> dict[str, Any]:
         record = asdict(self)
-        for key in ("target_at", "generated_at"):
+        for key in ("target_at", "generated_at", "chain_estimated_finish"):
             value = record[key]
             record[key] = value.isoformat() if value else None
         record["events"] = [event.to_dict() for event in self.events]
+        record["chain_top_hitters"] = list(self.chain_top_hitters)
         return record
