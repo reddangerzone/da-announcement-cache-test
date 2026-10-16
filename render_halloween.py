@@ -18,7 +18,7 @@ ICE = "#9eeaff"
 BLUE = "#40b9ff"
 PINK = "#f472aa"
 GOLD = "#ffd36a"
-BACKGROUND_ASSET = Path(__file__).resolve().parent / "assets" / "halloween-watch-v2.png"
+BACKGROUND_ASSET = Path(__file__).resolve().parent / "assets" / "halloween-watch-v3.png"
 FROZEN_SUNSHINE_ASSET = Path(__file__).resolve().parent / "assets" / "DASunshine-frozen.png"
 
 
@@ -71,9 +71,32 @@ def glow(canvas: Image.Image, center: tuple[int, int], color: tuple[int, int, in
     canvas.alpha_composite(layer.filter(ImageFilter.GaussianBlur(radius // 2)))
 
 
-def card(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int], accent: str = ICE) -> None:
-    draw.rounded_rectangle(box, 22, fill=CARD, outline=BORDER, width=3)
-    draw.line((box[0] + 24, box[1] + 2, box[2] - 24, box[1] + 2), fill=accent, width=3)
+def glass_card(canvas: Image.Image, box: tuple[int, int, int, int], accent: str = ICE) -> None:
+    """Draw a translucent frozen panel with an uneven melting ice cap."""
+    layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    x1, y1, x2, y2 = box
+    draw.rounded_rectangle(box, 22, fill=(3, 11, 24, 210), outline=(78, 119, 154, 235), width=3)
+    draw.line((x1 + 24, y1 + 2, x2 - 24, y1 + 2), fill=accent, width=4)
+    # Uneven frost shelf and downward melt/icicle shapes.
+    draw.line((x1 + 32, y1 + 8, x2 - 32, y1 + 8), fill=(208, 247, 255, 105), width=5)
+    span = max(80, x2 - x1 - 80)
+    for index, depth in enumerate((13, 24, 10, 31, 17, 26, 12)):
+        x = x1 + 44 + (index * 97) % span
+        if x < x2 - 34:
+            draw.polygon(((x - 7, y1 + 7), (x + 8, y1 + 7), (x + 1, y1 + depth)),
+                         fill=(185, 239, 255, 150))
+    draw.ellipse((x1 + 18, y2 - 8, x1 + 27, y2 + 2), fill=(122, 211, 237, 105))
+    draw.ellipse((x2 - 28, y2 - 5, x2 - 20, y2 + 4), fill=(122, 211, 237, 90))
+    canvas.alpha_composite(layer)
+
+
+def glass_row(canvas: Image.Image, box: tuple[int, int, int, int]) -> None:
+    layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    draw.rounded_rectangle(box, 16, fill=(8, 22, 40, 174), outline=(65, 112, 151, 215), width=2)
+    draw.line((box[0] + 18, box[1] + 2, box[2] - 18, box[1] + 2), fill=(190, 239, 255, 75), width=2)
+    canvas.alpha_composite(layer)
 
 
 def frozen_frame(draw: ImageDraw.ImageDraw, width: int, height: int) -> None:
@@ -142,7 +165,8 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
         glow(canvas, (760, 1030), (113, 48, 145), 260)
     draw = ImageDraw.Draw(canvas)
 
-    draw.rounded_rectangle((35, 37, width - 35, 238), 24, fill="#030914d9", outline="#668aab", width=2)
+    glass_card(canvas, (35, 37, width - 35, 238), ICE)
+    draw = ImageDraw.Draw(canvas)
     place_frozen_sunshine(canvas, (47, 40, 137, 130))
     draw = ImageDraw.Draw(canvas)
     draw.text((150, 57), "DELIGHTFUL ASSHOLES", font=font(22, True), fill=GOLD)
@@ -155,7 +179,8 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
     draw.line((48, 231, 475, 231), fill=PINK, width=2)
 
     hero = (38, 270, width-38, 610)
-    card(draw, hero, ICE)
+    glass_card(canvas, hero, ICE)
+    draw = ImageDraw.Draw(canvas)
     # Hairline fractures keep the data card readable while making it feel less pristine.
     for points in (
         ((58, 291), (89, 319), (76, 347), (111, 377)),
@@ -187,8 +212,9 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
     # Top hitters.
     left = (38, 645, 548, 1080)
     right = (570, 645, width-38, 1080)
-    card(draw, left, GOLD)
-    card(draw, right, PINK)
+    glass_card(canvas, left, GOLD)
+    glass_card(canvas, right, PINK)
+    draw = ImageDraw.Draw(canvas)
     draw.text((64, 681), "TOP HITTERS", font=gothic_font(27), fill=GOLD)
     hitters = state.chain_top_hitters[:3]
     if not hitters:
@@ -197,7 +223,8 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
         medals = (GOLD, "#d8e4ef", "#d58a55")
         y = 742
         for rank, hitter in enumerate(hitters, 1):
-            draw.rounded_rectangle((62, y, 522, y+82), 16, fill=CARD_2, outline=BORDER, width=2)
+            glass_row(canvas, (62, y, 522, y+82))
+            draw = ImageDraw.Draw(canvas)
             draw.ellipse((80, y+17, 128, y+65), fill="#162943", outline=medals[rank-1], width=3)
             draw.text((104, y+41), str(rank), font=font(20, True), fill=medals[rank-1], anchor="mm")
             name = str(hitter.get("name", "Unknown"))
