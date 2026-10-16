@@ -25,7 +25,8 @@ def get(api_name, version=2, start=0, end=0, fac_id=37786, user_id=2864080, cat=
         "faction_attacks": f"faction/attacks?limit={limit}&sort=DESC&to={end}&from={start}", # -- returns more info for fewer attacks
         "faction_organized_crimes": f"faction/crimes?cat={cat}", # -- returns faction crime info
         "faction_ranked_war_report": f"faction/{war}/rankedwarreport", # -- returns war report for specific war #
-        "faction_members": f"faction/{fac_id}/members",\n        "faction_chain": "faction/chain", # -- current faction chain progress # -- returns list of members in faction
+        "faction_members": f"faction/{fac_id}/members", # -- returns list of members in faction
+        "faction_chain": "faction/chain", # -- returns current faction chain progress
         "faction_contributors": f"faction/contributors?stat={stats}", # -- contributor categories such as gymenergy
         "user_personal_stats": f"user/{user_id}/personalstats?stat={stats}&timestamp={end}", # -- returns specific publicaly available stats
         "user": f"user?selections={stats}&id={user_id}", # -- returns basic user information
