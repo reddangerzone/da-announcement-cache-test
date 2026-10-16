@@ -18,7 +18,7 @@ ICE = "#9eeaff"
 BLUE = "#40b9ff"
 PINK = "#f472aa"
 GOLD = "#ffd36a"
-BACKGROUND_ASSET = Path(__file__).resolve().parent / "assets" / "halloween-watch.png"
+BACKGROUND_ASSET = Path(__file__).resolve().parent / "assets" / "halloween-watch-v2.png"
 FROZEN_SUNSHINE_ASSET = Path(__file__).resolve().parent / "assets" / "DASunshine-frozen.png"
 
 
@@ -42,6 +42,25 @@ def fitted(draw: ImageDraw.ImageDraw, text: str, maximum: int, minimum: int, wid
         if bounds[2] - bounds[0] <= width:
             return face
     return font(minimum, True)
+
+
+def gothic_font(size: int) -> ImageFont.FreeTypeFont:
+    for candidate in (
+        "/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
+    ):
+        if Path(candidate).exists():
+            return ImageFont.truetype(candidate, size)
+    return font(size, True)
+
+
+def fitted_gothic(draw: ImageDraw.ImageDraw, text: str, maximum: int, minimum: int, width: int):
+    for size in range(maximum, minimum - 1, -2):
+        face = gothic_font(size)
+        bounds = draw.textbbox((0, 0), text, font=face)
+        if bounds[2] - bounds[0] <= width:
+            return face
+    return gothic_font(minimum)
 
 
 def glow(canvas: Image.Image, center: tuple[int, int], color: tuple[int, int, int], radius: int) -> None:
@@ -128,14 +147,22 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
     draw = ImageDraw.Draw(canvas)
     draw.text((150, 57), "DELIGHTFUL ASSHOLES", font=font(22, True), fill=GOLD)
     headline = "AND NOW OUR WATCH BEGINS"
-    draw.text((width//2, 148), headline, font=fitted(draw, headline, 49, 30, width-95),
-              fill=TEXT, anchor="mm")
-    draw.text((width//2, 195), "2026 NIGHT’S WATCH 50K", font=font(21, True), fill=ICE, anchor="mm")
+    headline_face = fitted_gothic(draw, headline, 49, 30, width-95)
+    draw.text((width//2 + 3, 152), headline, font=headline_face, fill="#00040b", anchor="mm")
+    draw.text((width//2, 148), headline, font=headline_face, fill=TEXT, anchor="mm")
+    draw.text((width//2, 195), "2026 NIGHT’S WATCH 50K", font=gothic_font(21), fill=ICE, anchor="mm")
     draw.line((48, 226, width-48, 226), fill=ICE, width=3)
     draw.line((48, 231, 475, 231), fill=PINK, width=2)
 
     hero = (38, 270, width-38, 610)
     card(draw, hero, ICE)
+    # Hairline fractures keep the data card readable while making it feel less pristine.
+    for points in (
+        ((58, 291), (89, 319), (76, 347), (111, 377)),
+        ((841, 290), (814, 324), (829, 352), (796, 381)),
+        ((70, 584), (96, 563), (86, 542)),
+    ):
+        draw.line(points, fill="#274761", width=2)
     current = max(0, state.chain_current)
     target = max(1, state.chain_target)
     percent = min(100.0, current / target * 100)
@@ -147,6 +174,13 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
     if fill_width:
         draw.rounded_rectangle((track[0], track[1], track[0]+max(20, fill_width), track[3]),
                                28, fill=BLUE, outline=ICE, width=2)
+        edge = track[0] + max(20, fill_width)
+        for offset in (28, 74, 121):
+            x = track[0] + offset
+            if x < edge - 8:
+                draw.line((x, track[1]+8, x+18, track[3]-8), fill="#bcefff", width=2)
+        if edge < track[2] - 8:
+            draw.polygon(((edge-13, track[3]-2), (edge+2, track[3]-2), (edge-5, track[3]+16)), fill=ICE)
     draw.text((width//2, 507), f"{percent:.1f}% COMPLETE", font=font(31, True), fill=ICE, anchor="mm")
     draw.text((width//2, 557), pace_text(state), font=font(21, True), fill=MUTED, anchor="mm")
 
@@ -155,7 +189,7 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
     right = (570, 645, width-38, 1080)
     card(draw, left, GOLD)
     card(draw, right, PINK)
-    draw.text((64, 681), "TOP HITTERS", font=font(27, True), fill=GOLD)
+    draw.text((64, 681), "TOP HITTERS", font=gothic_font(27), fill=GOLD)
     hitters = state.chain_top_hitters[:3]
     if not hitters:
         draw.text((64, 755), "Waiting for contributor data…", font=font(19), fill=MUTED)
@@ -172,7 +206,7 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
                       fill=ICE, anchor="rm")
             y += 99
 
-    draw.text((596, 681), "CHAIN FORECAST", font=fitted(draw, "CHAIN FORECAST", 24, 18, 240), fill=PINK)
+    draw.text((596, 681), "CHAIN FORECAST", font=fitted_gothic(draw, "CHAIN FORECAST", 24, 18, 240), fill=PINK)
     draw.text((596, 754), "CURRENT PACE", font=font(15, True), fill=MUTED)
     rate = "CALCULATING" if not state.chain_rate_per_hour else f"{state.chain_rate_per_hour:,.0f} / HR"
     draw.text((596, 786), rate, font=fitted(draw, rate, 26, 18, 230), fill=ICE)
