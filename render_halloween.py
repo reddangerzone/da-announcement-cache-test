@@ -11,13 +11,16 @@ from models import AnnouncementState
 ROOT = Path(__file__).resolve().parent
 TEMPLATE = ROOT / "assets" / "nights-watch-template.jpg"
 FROZEN_SUNSHINE = ROOT / "assets" / "DASunshine-frozen.png"
+HEADER = ROOT / "assets" / "nights-watch-header.png"
 
 WHITE = "#f6fbff"
 ICE = "#8feaff"
 PALE_ICE = "#d9f7ff"
 MUTED = "#a8c1d7"
 PINK = "#ed7fb7"
-GOLD = "#ffd875"
+GOLD = "#ffd45f"
+ORANGE = "#ff9654"
+VIOLET = "#b99cff"
 INK = "#050a13"
 
 
@@ -64,6 +67,20 @@ def shadow_text(draw: ImageDraw.ImageDraw, xy: tuple[int, int], text: str,
               stroke_width=1, stroke_fill="#153349")
 
 
+def centered_segments(draw: ImageDraw.ImageDraw, y: int,
+                      segments: tuple[tuple[str, str], ...],
+                      face: ImageFont.FreeTypeFont) -> None:
+    """Draw differently colored text fragments as one centered line."""
+    widths = [draw.textlength(text, font=face) for text, _ in segments]
+    x = 450 - sum(widths) / 2
+    for (text, color), width in zip(segments, widths):
+        draw.text((x + 3, y + 3), text, font=face, fill=INK,
+                  stroke_width=2, stroke_fill=INK)
+        draw.text((x, y), text, font=face, fill=color,
+                  stroke_width=1, stroke_fill="#153349")
+        x += width
+
+
 def place_asset(canvas: Image.Image, path: Path,
                 box: tuple[int, int, int, int]) -> None:
     if not path.exists():
@@ -106,30 +123,29 @@ def render_halloween(state: AnnouncementState, destination: Path,
     draw = ImageDraw.Draw(canvas)
     now = state.generated_at or datetime.now(UTC)
 
-    # Preserve the original cinematic composition, but replace its generic mascot
-    # with the faction's own frozen sunshine.
-    place_asset(canvas, FROZEN_SUNSHINE, (31, 27, 181, 183))
+    # The headline is fixed artwork; only the chain information below is dynamic.
+    if HEADER.exists():
+        canvas.alpha_composite(Image.open(HEADER).convert("RGBA"), (0, 15))
+    else:
+        place_asset(canvas, FROZEN_SUNSHINE, (31, 27, 181, 183))
+        draw = ImageDraw.Draw(canvas)
+        shadow_text(draw, (190, 82), "AND NOW OUR WATCH BEGINS", gothic(40), WHITE)
     draw = ImageDraw.Draw(canvas)
-    shadow_text(draw, (182, 52), "DELIGHTFUL", font(34, True), PINK)
-    shadow_text(draw, (182, 93), "ASSHOLES", font(34, True), ICE)
-    shadow_text(
-        draw,
-        (450, 185),
-        "AND NOW OUR WATCH BEGINS",
-        fitted(draw, "AND NOW OUR WATCH BEGINS", 43, 27, 790, serif=True),
-        WHITE,
-        anchor="mm",
-    )
 
     current = max(0, state.chain_current)
     target = max(1, state.chain_target)
     percent = min(100.0, current / target * 100)
 
-    shadow_text(draw, (450, 350), "2026 NIGHT’S WATCH 50K", gothic(31), PALE_ICE,
+    shadow_text(draw, (450, 350), "2026 NIGHT’S WATCH 50K", gothic(31), GOLD,
                 anchor="mm")
     hit_text = f"{current:,} / {target:,}"
-    shadow_text(draw, (450, 441), hit_text,
-                fitted(draw, hit_text, 72, 45, 730), WHITE, anchor="mm")
+    hit_face = fitted(draw, hit_text, 72, 45, 730)
+    centered_segments(
+        draw,
+        408,
+        ((f"{current:,}", ICE), (" / ", WHITE), (f"{target:,}", PINK)),
+        hit_face,
+    )
     draw.text((450, 491), "CHAIN HITS", font=font(19, True), fill=MUTED, anchor="mm")
 
     # The template provides the dimensional frozen track; this is the live fill.
@@ -141,7 +157,7 @@ def render_halloween(state: AnnouncementState, destination: Path,
         draw.rounded_rectangle(
             (inner[0], inner[1], fill_right, inner[3]),
             19,
-            fill="#36bfe0",
+            fill="#39d5d0",
             outline="#c6f8ff",
             width=2,
         )
@@ -189,7 +205,12 @@ def render_halloween(state: AnnouncementState, destination: Path,
     draw.text((493, 1011), now.strftime("%d %b · %H:%M TCT"),
               font=font(18, True), fill=ICE)
 
-    draw.text((450, 1137), "AUTOMATED FACTION UPDATE", font=font(15, True),
-              fill=PALE_ICE, anchor="mm")
+    footer = (
+        "AUTOMATED FACTION ANNOUNCEMENT  |||  "
+        f"LAST UPDATED {now:%d %b · %H:%M TCT}"
+    )
+    draw.text((450, 1100), footer,
+              font=fitted(draw, footer, 16, 12, 710), fill=PALE_ICE,
+              anchor="mm", stroke_width=1, stroke_fill=INK)
     destination.parent.mkdir(parents=True, exist_ok=True)
     canvas.convert("RGB").save(destination, format="PNG", optimize=True)
