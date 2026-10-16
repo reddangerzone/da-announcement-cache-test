@@ -4,7 +4,7 @@ import math
 from datetime import UTC, datetime
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from models import AnnouncementState
 
@@ -18,6 +18,7 @@ ICE = "#9eeaff"
 BLUE = "#40b9ff"
 PINK = "#f472aa"
 GOLD = "#ffd36a"
+BACKGROUND_ASSET = Path(__file__).resolve().parent / "assets" / "halloween-watch.png"
 
 
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
@@ -96,26 +97,24 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
     if (width, height) != (900, 1200):
         raise ValueError("The Halloween renderer currently requires a 900×1200 canvas")
     now = state.generated_at or datetime.now(UTC)
-    canvas = Image.new("RGBA", (width, height), BG)
-    glow(canvas, (130, 120), (54, 173, 255), 225)
-    glow(canvas, (760, 1030), (113, 48, 145), 260)
+    if BACKGROUND_ASSET.exists():
+        background = Image.open(BACKGROUND_ASSET).convert("RGBA")
+        canvas = ImageOps.fit(background, (width, height), Image.Resampling.LANCZOS)
+        veil = Image.new("RGBA", (width, height), (2, 7, 16, 74))
+        canvas.alpha_composite(veil)
+    else:
+        canvas = Image.new("RGBA", (width, height), BG)
+        glow(canvas, (130, 120), (54, 173, 255), 225)
+        glow(canvas, (760, 1030), (113, 48, 145), 260)
     draw = ImageDraw.Draw(canvas)
 
-    # Frozen mountain/watch silhouettes: atmospheric, but kept behind the data.
-    draw.polygon(((0, 355), (120, 245), (205, 337), (325, 205), (460, 350),
-                  (590, 250), (720, 350), (835, 225), (900, 305), (900, 470), (0, 470)),
-                 fill="#0b2037")
-    draw.rectangle((755, 187, 805, 350), fill="#091727")
-    draw.polygon(((745, 187), (780, 145), (815, 187)), fill="#0a1a2b")
-    for y in (220, 264, 308):
-        draw.rectangle((770, y, 790, y+14), fill="#53a8cf")
-
+    draw.rounded_rectangle((35, 37, width - 35, 238), 24, fill="#030914d9", outline="#668aab", width=2)
     moon(draw)
     draw.text((150, 57), "DELIGHTFUL ASSHOLES", font=font(22, True), fill=GOLD)
     headline = "AND NOW OUR WATCH BEGINS"
     draw.text((width//2, 148), headline, font=fitted(draw, headline, 49, 30, width-95),
               fill=TEXT, anchor="mm")
-    draw.text((width//2, 195), "HALLOWEEN 50K CHAIN", font=font(21, True), fill=ICE, anchor="mm")
+    draw.text((width//2, 195), "2026 NIGHT’S WATCH 50K", font=font(21, True), fill=ICE, anchor="mm")
     draw.line((48, 226, width-48, 226), fill=ICE, width=3)
     draw.line((48, 231, 475, 231), fill=PINK, width=2)
 
@@ -157,7 +156,7 @@ def render_halloween(state: AnnouncementState, destination: Path, width: int, he
                       fill=ICE, anchor="rm")
             y += 99
 
-    draw.text((596, 681), "THE NIGHT’S WATCH", font=fitted(draw, "THE NIGHT’S WATCH", 24, 18, 240), fill=PINK)
+    draw.text((596, 681), "CHAIN FORECAST", font=fitted(draw, "CHAIN FORECAST", 24, 18, 240), fill=PINK)
     draw.text((596, 754), "CURRENT PACE", font=font(15, True), fill=MUTED)
     rate = "CALCULATING" if not state.chain_rate_per_hour else f"{state.chain_rate_per_hour:,.0f} / HR"
     draw.text((596, 786), rate, font=fitted(draw, rate, 26, 18, 230), fill=ICE)
