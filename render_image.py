@@ -235,6 +235,11 @@ def event_stamp(event) -> str:
 
 
 def render(state: AnnouncementState, destination: Path, width: int = 900, height: int = 1200) -> None:
+    if state.halloween_active:
+        from render_halloween import render_halloween
+        render_halloween(state, destination, width, height)
+        return
+
     if (width, height) != (900, 1200):
         raise ValueError("The announcement renderer currently requires a 900×1200 canvas")
 
