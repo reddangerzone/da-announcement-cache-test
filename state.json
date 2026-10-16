@@ -1,11 +1,11 @@
 {
-  "mode": "active_war",
-  "headline": "WAR IS LIVE",
-  "target_at": "2026-10-15T15:00:00+00:00",
-  "opponent_name": "Chaos Theory",
-  "opponent_id": 44092,
-  "war_id": 51068,
-  "war_label": "termed",
+  "mode": "not_enlisted",
+  "headline": "NEXT ENLISTMENT",
+  "target_at": null,
+  "opponent_name": null,
+  "opponent_id": null,
+  "war_id": null,
+  "war_label": null,
   "notes": "Us to win - 21k R goal, onliners only, med out deals encouraged",
   "events": [
     {
@@ -45,7 +45,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-16T13:15:18.020848+00:00",
+  "generated_at": "2026-10-16T13:30:25.723031+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
