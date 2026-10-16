@@ -136,8 +136,6 @@ def render_halloween(state: AnnouncementState, destination: Path,
     target = max(1, state.chain_target)
     percent = min(100.0, current / target * 100)
 
-    shadow_text(draw, (450, 350), "2026 NIGHT’S WATCH 50K", gothic(31), GOLD,
-                anchor="mm")
     hit_text = f"{current:,} / {target:,}"
     hit_face = fitted(draw, hit_text, 72, 45, 730)
     centered_segments(
@@ -146,7 +144,7 @@ def render_halloween(state: AnnouncementState, destination: Path,
         ((f"{current:,}", ICE), (" / ", WHITE), (f"{target:,}", PINK)),
         hit_face,
     )
-    draw.text((450, 491), "CHAIN HITS", font=font(19, True), fill=MUTED, anchor="mm")
+    draw.text((450, 516), "CHAIN HITS", font=font(17, True), fill=MUTED, anchor="mm")
 
     # The template provides the dimensional frozen track; this is the live fill.
     track = (92, 579, 808, 642)
