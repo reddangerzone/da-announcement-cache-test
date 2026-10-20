@@ -1,7 +1,7 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
+  "mode": "awaiting_matchmaking",
+  "headline": "NEXT MATCHMAKING",
+  "target_at": "2026-10-20T12:00:00+00:00",
   "opponent_name": null,
   "opponent_id": null,
   "war_id": null,
@@ -45,7 +45,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-20T00:00:26.421426+00:00",
+  "generated_at": "2026-10-20T00:15:17.380321+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
