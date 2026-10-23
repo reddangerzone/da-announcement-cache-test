@@ -1,5 +1,5 @@
 {
-  "mode": "stale",
+  "mode": "matched",
   "headline": "NEXT RANKED WAR",
   "target_at": "2026-10-24T18:00:00+00:00",
   "opponent_name": "())))))",
@@ -45,8 +45,8 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-23T00:00:25.513363+00:00",
-  "stale_reason": "Ranked-war API data was unavailable",
+  "generated_at": "2026-10-23T00:15:19.087233+00:00",
+  "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
   "chain_target": 50000,
