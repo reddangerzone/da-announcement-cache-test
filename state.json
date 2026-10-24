@@ -1,6 +1,6 @@
 {
-  "mode": "matched",
-  "headline": "NEXT RANKED WAR",
+  "mode": "active_war",
+  "headline": "WAR IS LIVE",
   "target_at": "2026-10-24T18:00:00+00:00",
   "opponent_name": "())))))",
   "opponent_id": 46978,
@@ -45,7 +45,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-24T17:45:15.190431+00:00",
+  "generated_at": "2026-10-24T18:00:23.174770+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
