@@ -120,9 +120,11 @@ def main() -> int:
     halloween_may_be_active = bool(tracker.get("activated") or event_started)
     chain_payload = None
     contributors_payload = None
+    members_payload = None
     if halloween_may_be_active and not tracker.get("complete"):
         chain_payload = api.get("faction_chain") or {"chain": {}}
         contributors_payload = api.get("faction_chain_report") or {}
+        members_payload = api.get("faction_members", fac_id=config["faction_id"]) or {}
 
     tracker, chain = update_tracker(
         tracker,
@@ -130,6 +132,7 @@ def main() -> int:
         event_started=event_started,
         chain_payload=chain_payload,
         contributors_payload=contributors_payload,
+        members_payload=members_payload,
     )
     save_tracker(tracker_output, tracker)
 
