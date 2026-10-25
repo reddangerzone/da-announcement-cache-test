@@ -45,27 +45,27 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-25T21:31:17.772251+00:00",
+  "generated_at": "2026-10-25T21:32:20.542780+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 4904,
+  "chain_current": 4918,
   "chain_target": 50000,
-  "chain_rate_per_hour": 395.25809772265296,
-  "chain_estimated_finish": "2026-10-30T15:36:50.913293+00:00",
+  "chain_rate_per_hour": 397.8124987851918,
+  "chain_estimated_finish": "2026-10-30T14:51:49.624937+00:00",
   "chain_top_hitters": [
     {
       "id": 2902025,
-      "name": "Unknown",
+      "name": "Cptn_HellFire",
       "hits": 248
     },
     {
       "id": 2840742,
-      "name": "Unknown",
+      "name": "Rosti",
       "hits": 196
     },
     {
       "id": 3364361,
-      "name": "Unknown",
+      "name": "Etop",
       "hits": 186
     }
   ]
