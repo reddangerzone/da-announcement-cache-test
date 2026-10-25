@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-25T22:00:25.749592+00:00",
+  "generated_at": "2026-10-25T22:15:17.954933+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 5162,
+  "chain_current": 5227,
   "chain_target": 50000,
-  "chain_rate_per_hour": 416.6866728054393,
-  "chain_estimated_finish": "2026-10-30T09:36:47.469562+00:00",
+  "chain_rate_per_hour": 405.1712815918463,
+  "chain_estimated_finish": "2026-10-30T12:45:31.934657+00:00",
   "chain_top_hitters": [
     {
       "id": 2902025,
@@ -61,12 +61,12 @@
     {
       "id": 2840742,
       "name": "Rosti",
-      "hits": 205
+      "hits": 211
     },
     {
       "id": 3114110,
       "name": "bober",
-      "hits": 187
+      "hits": 189
     }
   ]
 }
