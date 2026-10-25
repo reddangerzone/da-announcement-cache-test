@@ -45,12 +45,12 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-25T19:15:16.145399+00:00",
+  "generated_at": "2026-10-25T19:17:18.027217+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 4015,
+  "chain_current": 4025,
   "chain_target": 50000,
-  "chain_rate_per_hour": 549.2041790579726,
-  "chain_estimated_finish": "2026-10-29T06:59:05.024334+00:00",
+  "chain_rate_per_hour": 546.1144833591133,
+  "chain_estimated_finish": "2026-10-29T07:28:26.349049+00:00",
   "chain_top_hitters": []
 }
