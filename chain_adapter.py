@@ -37,25 +37,31 @@ def chain_number(chain: dict[str, Any], key: str, default: int = 0) -> int:
 def parse_top_hitters(payload: dict[str, Any] | None, limit: int = 3) -> tuple[dict[str, Any], ...]:
     if not isinstance(payload, dict):
         return ()
-    raw = payload.get("contributors") or []
-    if isinstance(raw, dict):
-        # Torn API v2 groups contributor rows beneath the requested stat,
-        # e.g. {"contributors": {"chainhits": [{...}]}}. Older payloads
-        # may instead map player IDs directly to contributor objects.
-        grouped_rows = [
-            item
-            for value in raw.values()
-            if isinstance(value, list)
-            for item in value
-        ]
-        if grouped_rows:
-            raw = grouped_rows
-        else:
-            raw = [
-                dict(value, id=key) if isinstance(value, dict)
-                else {"id": key, "value": value}
-                for key, value in raw.items()
+
+    # The live chain report is the authoritative source for per-member hits.
+    # Torn v2 returns: chainreport -> attackers -> attacks -> total.
+    report = payload.get("chainreport")
+    raw: Any = report.get("attackers", []) if isinstance(report, dict) else None
+
+    # Retain support for the older contributors payload shapes.
+    if raw is None:
+        raw = payload.get("contributors") or []
+        if isinstance(raw, dict):
+            grouped_rows = [
+                item
+                for value in raw.values()
+                if isinstance(value, list)
+                for item in value
             ]
+            if grouped_rows:
+                raw = grouped_rows
+
+    if isinstance(raw, dict):
+        raw = [
+            dict(value, id=value.get("id") or key) if isinstance(value, dict)
+            else {"id": key, "value": value}
+            for key, value in raw.items()
+        ]
     if not isinstance(raw, list):
         return ()
 
@@ -64,23 +70,30 @@ def parse_top_hitters(payload: dict[str, Any] | None, limit: int = 3) -> tuple[d
         if not isinstance(item, dict):
             continue
         player = item.get("player") if isinstance(item.get("player"), dict) else {}
+        user = item.get("user") if isinstance(item.get("user"), dict) else {}
+        attacks = item.get("attacks") if isinstance(item.get("attacks"), dict) else {}
         name = (
             item.get("username") or item.get("name") or item.get("player_name")
-            or player.get("name") or "Unknown"
+            or player.get("name") or player.get("username")
+            or user.get("name") or user.get("username") or "Unknown"
         )
-        value = next(
-            (item.get(key) for key in ("contributed", "value", "amount", "chainhits", "chain_hits", "hits")
-             if item.get(key) is not None),
-            0,
-        )
+        value = attacks.get("total")
+        if value is None:
+            value = next(
+                (item.get(key) for key in ("contributed", "value", "amount", "chainhits", "chain_hits", "hits")
+                 if item.get(key) is not None),
+                0,
+            )
         try:
             hits = max(0, int(value))
         except (TypeError, ValueError):
             continue
-        player_id = item.get("id") or item.get("player_id") or player.get("id")
+        player_id = (
+            item.get("id") or item.get("player_id") or item.get("user_id")
+            or player.get("id") or user.get("id")
+        )
         parsed.append({"id": player_id, "name": str(name), "hits": hits})
     return tuple(sorted(parsed, key=lambda row: (-row["hits"], row["name"].lower()))[:limit])
-
 
 def halloween_event_started(events: Iterable[Any], now: datetime) -> bool:
     now = now.astimezone(UTC)
