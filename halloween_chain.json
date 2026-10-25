@@ -2,11 +2,11 @@
   "year": 2026,
   "activated": true,
   "complete": false,
-  "chain_id": 72069954,
+  "chain_id": 72070299,
   "samples": [
     {
-      "at": "2026-10-25T10:15:16.071186+00:00",
-      "hits": 1
+      "at": "2026-10-25T10:30:20.962610+00:00",
+      "hits": 20
     }
   ],
   "top_hitters": []
