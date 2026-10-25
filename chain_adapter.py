@@ -39,8 +39,23 @@ def parse_top_hitters(payload: dict[str, Any] | None, limit: int = 3) -> tuple[d
         return ()
     raw = payload.get("contributors") or []
     if isinstance(raw, dict):
-        raw = [dict(value, id=key) if isinstance(value, dict) else {"id": key, "value": value}
-               for key, value in raw.items()]
+        # Torn API v2 groups contributor rows beneath the requested stat,
+        # e.g. {"contributors": {"chainhits": [{...}]}}. Older payloads
+        # may instead map player IDs directly to contributor objects.
+        grouped_rows = [
+            item
+            for value in raw.values()
+            if isinstance(value, list)
+            for item in value
+        ]
+        if grouped_rows:
+            raw = grouped_rows
+        else:
+            raw = [
+                dict(value, id=key) if isinstance(value, dict)
+                else {"id": key, "value": value}
+                for key, value in raw.items()
+            ]
     if not isinstance(raw, list):
         return ()
 
@@ -54,7 +69,7 @@ def parse_top_hitters(payload: dict[str, Any] | None, limit: int = 3) -> tuple[d
             or player.get("name") or "Unknown"
         )
         value = next(
-            (item.get(key) for key in ("value", "amount", "chainhits", "chain_hits", "hits")
+            (item.get(key) for key in ("contributed", "value", "amount", "chainhits", "chain_hits", "hits")
              if item.get(key) is not None),
             0,
         )
