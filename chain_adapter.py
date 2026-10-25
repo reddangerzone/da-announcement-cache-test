@@ -34,7 +34,36 @@ def chain_number(chain: dict[str, Any], key: str, default: int = 0) -> int:
         return default
 
 
-def parse_top_hitters(payload: dict[str, Any] | None, limit: int = 3) -> tuple[dict[str, Any], ...]:
+def parse_member_names(payload: dict[str, Any] | None) -> dict[int, str]:
+    if not isinstance(payload, dict):
+        return {}
+    raw = payload.get("members") or []
+    if isinstance(raw, dict):
+        raw = [
+            dict(value, id=value.get("id") or key) if isinstance(value, dict)
+            else {"id": key, "name": value}
+            for key, value in raw.items()
+        ]
+    if not isinstance(raw, list):
+        return {}
+    names: dict[int, str] = {}
+    for item in raw:
+        if not isinstance(item, dict):
+            continue
+        try:
+            player_id = int(item.get("id") or item.get("player_id") or item.get("user_id"))
+        except (TypeError, ValueError):
+            continue
+        name = item.get("name") or item.get("username")
+        if name:
+            names[player_id] = str(name)
+    return names
+
+
+def parse_top_hitters(
+    payload: dict[str, Any] | None, limit: int = 3,
+    member_names: dict[int, str] | None = None,
+) -> tuple[dict[str, Any], ...]:
     if not isinstance(payload, dict):
         return ()
 
@@ -72,10 +101,19 @@ def parse_top_hitters(payload: dict[str, Any] | None, limit: int = 3) -> tuple[d
         player = item.get("player") if isinstance(item.get("player"), dict) else {}
         user = item.get("user") if isinstance(item.get("user"), dict) else {}
         attacks = item.get("attacks") if isinstance(item.get("attacks"), dict) else {}
+        player_id = (
+            item.get("id") or item.get("player_id") or item.get("user_id")
+            or player.get("id") or user.get("id")
+        )
+        try:
+            lookup_id = int(player_id)
+        except (TypeError, ValueError):
+            lookup_id = None
         name = (
             item.get("username") or item.get("name") or item.get("player_name")
             or player.get("name") or player.get("username")
-            or user.get("name") or user.get("username") or "Unknown"
+            or user.get("name") or user.get("username")
+            or (member_names or {}).get(lookup_id) or "Unknown"
         )
         value = attacks.get("total")
         if value is None:
@@ -88,10 +126,6 @@ def parse_top_hitters(payload: dict[str, Any] | None, limit: int = 3) -> tuple[d
             hits = max(0, int(value))
         except (TypeError, ValueError):
             continue
-        player_id = (
-            item.get("id") or item.get("player_id") or item.get("user_id")
-            or player.get("id") or user.get("id")
-        )
         parsed.append({"id": player_id, "name": str(name), "hits": hits})
     return tuple(sorted(parsed, key=lambda row: (-row["hits"], row["name"].lower()))[:limit])
 
@@ -127,7 +161,7 @@ def save_tracker(path: Path, tracker: dict[str, Any]) -> None:
 def update_tracker(
     tracker: dict[str, Any], *, now: datetime, event_started: bool,
     chain_payload: dict[str, Any] | None, contributors_payload: dict[str, Any] | None,
-    target: int = TARGET_HITS,
+    members_payload: dict[str, Any] | None = None, target: int = TARGET_HITS,
 ) -> tuple[dict[str, Any], ChainSnapshot]:
     now = now.astimezone(UTC)
     tracker["activated"] = bool(tracker.get("activated") or event_started)
@@ -160,7 +194,7 @@ def update_tracker(
     samples.append({"at": now.isoformat(), "hits": current})
     tracker["samples"] = samples
 
-    top_hitters = parse_top_hitters(contributors_payload)
+    top_hitters = parse_top_hitters(contributors_payload, member_names=parse_member_names(members_payload))
     if top_hitters:
         tracker["top_hitters"] = list(top_hitters)
     else:
