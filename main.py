@@ -122,7 +122,7 @@ def main() -> int:
     contributors_payload = None
     if halloween_may_be_active and not tracker.get("complete"):
         chain_payload = api.get("faction_chain") or {"chain": {}}
-        contributors_payload = api.get("faction_contributors", stats="chainhits") or {}
+        contributors_payload = api.get("faction_chain_report") or {}
 
     tracker, chain = update_tracker(
         tracker,
