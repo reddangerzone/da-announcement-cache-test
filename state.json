@@ -1,6 +1,6 @@
 {
-  "mode": "stale",
-  "headline": "WAR IS LIVE",
+  "mode": "active_war",
+  "headline": "AND NOW OUR WATCH BEGINS",
   "target_at": "2026-10-24T18:00:00+00:00",
   "opponent_name": "())))))",
   "opponent_id": 46978,
@@ -45,9 +45,9 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-25T00:00:22.693595+00:00",
-  "stale_reason": "Ranked-war API data was unavailable",
-  "halloween_active": false,
+  "generated_at": "2026-10-25T00:15:16.192813+00:00",
+  "stale_reason": null,
+  "halloween_active": true,
   "chain_current": 0,
   "chain_target": 50000,
   "chain_rate_per_hour": null,
