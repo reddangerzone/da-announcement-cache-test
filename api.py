@@ -27,6 +27,7 @@ def get(api_name, version=2, start=0, end=0, fac_id=37786, user_id=2864080, cat=
         "faction_ranked_war_report": f"faction/{war}/rankedwarreport", # -- returns war report for specific war #
         "faction_members": f"faction/{fac_id}/members", # -- returns list of members in faction
         "faction_chain": "faction/chain", # -- returns current faction chain progress
+        "faction_chain_report": "faction/chainreport", # -- returns live/latest per-member chain totals
         "faction_contributors": f"faction/contributors?stat={stats}", # -- contributor categories such as gymenergy
         "user_personal_stats": f"user/{user_id}/personalstats?stat={stats}&timestamp={end}", # -- returns specific publicaly available stats
         "user": f"user?selections={stats}&id={user_id}", # -- returns basic user information
@@ -47,7 +48,7 @@ def get(api_name, version=2, start=0, end=0, fac_id=37786, user_id=2864080, cat=
         response.raise_for_status()
         return response.json()
     except requests.RequestException as e:
-        print(f"Error fetching data: {e} - Key used: {selected_key}")
+        print(f"Error fetching {api_name}: {e}")
         return None
 
 now = datetime.datetime.now().timestamp()
