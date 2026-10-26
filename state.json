@@ -45,18 +45,18 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-26T07:45:16.885833+00:00",
+  "generated_at": "2026-10-26T08:00:24.965982+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 7827,
+  "chain_current": 7879,
   "chain_target": 50000,
-  "chain_rate_per_hour": 281.69553018184,
-  "chain_estimated_finish": "2026-11-01T13:27:57.514360+00:00",
+  "chain_rate_per_hour": 276.8987367526238,
+  "chain_estimated_finish": "2026-11-01T16:07:26.099174+00:00",
   "chain_top_hitters": [
     {
       "id": 3364361,
       "name": "Etop",
-      "hits": 341
+      "hits": 348
     },
     {
       "id": 2902025,
@@ -69,10 +69,10 @@
       "hits": 295
     }
   ],
-  "awards_today": 34,
-  "awards_event_total": 34,
+  "awards_today": 35,
+  "awards_event_total": 35,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-26T07:45:16.885833+00:00",
+  "awards_last_updated_at": "2026-10-26T08:00:24.965982+00:00",
   "awards_first_day_partial": true,
   "award_top_earners": [
     {
@@ -81,14 +81,14 @@
       "awards": 5
     },
     {
-      "id": 4465166,
-      "name": "SmoothieJo",
+      "id": 3880255,
+      "name": "Chesed",
       "awards": 3
     },
     {
-      "id": 4505111,
-      "name": "Brett67",
-      "awards": 2
+      "id": 4465166,
+      "name": "SmoothieJo",
+      "awards": 3
     }
   ]
 }
