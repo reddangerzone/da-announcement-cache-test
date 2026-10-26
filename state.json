@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-26T04:30:19.820459+00:00",
+  "generated_at": "2026-10-26T04:45:17.992439+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 6928,
+  "chain_current": 6982,
   "chain_target": 50000,
-  "chain_rate_per_hour": 217.38299943105503,
-  "chain_estimated_finish": "2026-11-03T10:38:39.390369+00:00",
+  "chain_rate_per_hour": 199.76140444890177,
+  "chain_estimated_finish": "2026-11-04T04:06:06.847078+00:00",
   "chain_top_hitters": [
     {
       "id": 2840742,
@@ -69,12 +69,17 @@
       "hits": 266
     }
   ],
-  "awards_today": 14,
-  "awards_event_total": 14,
+  "awards_today": 16,
+  "awards_event_total": 16,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-26T04:30:19.820459+00:00",
+  "awards_last_updated_at": "2026-10-26T04:45:17.992439+00:00",
   "awards_first_day_partial": true,
   "award_top_earners": [
+    {
+      "id": 4505111,
+      "name": "Brett67",
+      "awards": 2
+    },
     {
       "id": 4465166,
       "name": "SmoothieJo",
@@ -83,11 +88,6 @@
     {
       "id": 3996981,
       "name": "Alexitobane",
-      "awards": 1
-    },
-    {
-      "id": 4553968,
-      "name": "AngeliousWonder",
       "awards": 1
     }
   ]
