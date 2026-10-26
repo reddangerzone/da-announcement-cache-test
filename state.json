@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-26T09:30:20.346854+00:00",
+  "generated_at": "2026-10-26T09:45:19.527712+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 8319,
+  "chain_current": 8362,
   "chain_target": 50000,
-  "chain_rate_per_hour": 228.6813569664704,
-  "chain_estimated_finish": "2026-11-02T23:46:20.525325+00:00",
+  "chain_rate_per_hour": 224.36152928297685,
+  "chain_estimated_finish": "2026-11-03T03:20:23.371000+00:00",
   "chain_top_hitters": [
     {
       "id": 3364361,
@@ -69,10 +69,10 @@
       "hits": 311
     }
   ],
-  "awards_today": 36,
-  "awards_event_total": 36,
+  "awards_today": 37,
+  "awards_event_total": 37,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-26T09:30:20.346854+00:00",
+  "awards_last_updated_at": "2026-10-26T09:45:19.527712+00:00",
   "awards_first_day_partial": true,
   "award_top_earners": [
     {
