@@ -14,6 +14,7 @@ sys.path.insert(0, str(PROJECT_ROOT.parent))
 import api  # type: ignore
 
 from calendar_adapter import parse_torn_calendar
+from award_tracker import load_award_tracker, save_award_tracker, update_award_tracker
 from chain_adapter import (
     halloween_event_started,
     load_tracker,
@@ -45,10 +46,14 @@ def load_previous_state(path: Path) -> AnnouncementState | None:
             )
             for item in data.pop("events", [])
         )
-        for key in ("target_at", "generated_at", "chain_estimated_finish"):
+        for key in (
+            "target_at", "generated_at", "chain_estimated_finish",
+            "awards_tracking_started_at", "awards_last_updated_at",
+        ):
             if data.get(key):
                 data[key] = datetime.fromisoformat(data[key])
         data["chain_top_hitters"] = tuple(data.get("chain_top_hitters", ()))
+        data["award_top_earners"] = tuple(data.get("award_top_earners", ()))
         return AnnouncementState(events=events, **data)
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
         return None
@@ -59,6 +64,7 @@ def main() -> int:
     parser.add_argument("--output", default="announcement.png")
     parser.add_argument("--state-output", default="state.json")
     parser.add_argument("--halloween-tracker", default="halloween_chain.json")
+    parser.add_argument("--award-tracker", default="award_tracker.json")
     parser.add_argument(
         "--enlisted", action=argparse.BooleanOptionalAction, default=None,
         help="Override the faction-news enlistment result for testing",
@@ -72,6 +78,7 @@ def main() -> int:
     output = PROJECT_ROOT / args.output
     state_output = PROJECT_ROOT / args.state_output
     tracker_output = PROJECT_ROOT / args.halloween_tracker
+    award_tracker_output = PROJECT_ROOT / args.award_tracker
     previous_state = load_previous_state(state_output)
 
     payload = api.get("faction_ranked_wars", fac_id=config["faction_id"])
@@ -135,6 +142,27 @@ def main() -> int:
         members_payload=members_payload,
     )
     save_tracker(tracker_output, tracker)
+
+    award_data = load_award_tracker(award_tracker_output)
+    if halloween_may_be_active:
+        if members_payload is None:
+            members_payload = api.get("faction_members", fac_id=config["faction_id"]) or {}
+        award_data, awards = update_award_tracker(
+            award_data,
+            now=now,
+            members_payload=members_payload,
+            fetch_profile=lambda player_id: api.get("user_profile", user_id=player_id),
+        )
+        save_award_tracker(award_tracker_output, award_data)
+        state = replace(
+            state,
+            awards_today=awards.today,
+            awards_event_total=awards.event_total,
+            awards_tracking_started_at=awards.tracking_started_at,
+            awards_last_updated_at=awards.last_updated_at,
+            awards_first_day_partial=awards.first_day_partial,
+            award_top_earners=awards.top_earners,
+        )
 
     if chain.active:
         state = replace(

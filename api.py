@@ -30,6 +30,7 @@ def get(api_name, version=2, start=0, end=0, fac_id=37786, user_id=2864080, cat=
         "faction_chain_report": "faction/chainreport", # -- returns live/latest per-member chain totals
         "faction_contributors": f"faction/contributors?stat={stats}", # -- contributor categories such as gymenergy
         "user_personal_stats": f"user/{user_id}/personalstats?stat={stats}&timestamp={end}", # -- returns specific publicaly available stats
+        "user_profile": f"user/{user_id}/profile", # -- public profile, including total awards earned
         "user": f"user?selections={stats}&id={user_id}", # -- returns basic user information
         "forum_threads": f"forum/{cat}/threads?limit={limit}&to={end}", # -- returns forum posts for a specific category
         "faction_news": f"faction/news?limit=100&sort=DESC&cat={cat}",

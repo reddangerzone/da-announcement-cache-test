@@ -43,12 +43,22 @@ class AnnouncementState:
     chain_rate_per_hour: float | None = None
     chain_estimated_finish: datetime | None = None
     chain_top_hitters: tuple[dict[str, Any], ...] = field(default_factory=tuple)
+    awards_today: int = 0
+    awards_event_total: int = 0
+    awards_tracking_started_at: datetime | None = None
+    awards_last_updated_at: datetime | None = None
+    awards_first_day_partial: bool = True
+    award_top_earners: tuple[dict[str, Any], ...] = field(default_factory=tuple)
 
     def to_dict(self) -> dict[str, Any]:
         record = asdict(self)
-        for key in ("target_at", "generated_at", "chain_estimated_finish"):
+        for key in (
+            "target_at", "generated_at", "chain_estimated_finish",
+            "awards_tracking_started_at", "awards_last_updated_at",
+        ):
             value = record[key]
             record[key] = value.isoformat() if value else None
         record["events"] = [event.to_dict() for event in self.events]
         record["chain_top_hitters"] = list(self.chain_top_hitters)
+        record["award_top_earners"] = list(self.award_top_earners)
         return record
