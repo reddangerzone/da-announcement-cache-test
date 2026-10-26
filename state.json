@@ -45,14 +45,19 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-26T06:15:19.837238+00:00",
+  "generated_at": "2026-10-26T06:30:21.040637+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 7531,
+  "chain_current": 7633,
   "chain_target": 50000,
-  "chain_rate_per_hour": 282.5530494858026,
-  "chain_estimated_finish": "2026-11-01T12:33:36.103154+00:00",
+  "chain_rate_per_hour": 309.6930757007515,
+  "chain_estimated_finish": "2026-10-31T23:18:32.516770+00:00",
   "chain_top_hitters": [
+    {
+      "id": 2902025,
+      "name": "Cptn_HellFire",
+      "hits": 330
+    },
     {
       "id": 3364361,
       "name": "Etop",
@@ -62,17 +67,12 @@
       "id": 2840742,
       "name": "Rosti",
       "hits": 295
-    },
-    {
-      "id": 2902025,
-      "name": "Cptn_HellFire",
-      "hits": 291
     }
   ],
-  "awards_today": 21,
-  "awards_event_total": 21,
+  "awards_today": 24,
+  "awards_event_total": 24,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-26T06:15:19.837238+00:00",
+  "awards_last_updated_at": "2026-10-26T06:30:21.040637+00:00",
   "awards_first_day_partial": true,
   "award_top_earners": [
     {
