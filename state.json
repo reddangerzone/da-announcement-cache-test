@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-27T20:30:25.773668+00:00",
+  "generated_at": "2026-10-27T20:45:23.554394+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 16634,
+  "chain_current": 16686,
   "chain_target": 50000,
-  "chain_rate_per_hour": 308.5703528833186,
-  "chain_estimated_finish": "2026-11-01T08:38:17.130678+00:00",
+  "chain_rate_per_hour": 297.47512419022274,
+  "chain_estimated_finish": "2026-11-01T12:44:44.660138+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -464,26 +464,26 @@
       "hits": 560
     }
   ],
-  "awards_today": 85,
-  "awards_event_total": 197,
+  "awards_today": 90,
+  "awards_event_total": 202,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-27T20:30:25.773668+00:00",
+  "awards_last_updated_at": "2026-10-27T20:45:23.554394+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
       "id": 4531011,
       "name": "Scaffa",
+      "awards": 8
+    },
+    {
+      "id": 4531637,
+      "name": "chic101",
       "awards": 7
     },
     {
       "id": 4561538,
       "name": "LilErel",
       "awards": 6
-    },
-    {
-      "id": 4558872,
-      "name": "Maj_saM",
-      "awards": 5
     }
   ]
 }
