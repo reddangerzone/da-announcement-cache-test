@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-27T04:15:21.058139+00:00",
+  "generated_at": "2026-10-27T04:30:22.309887+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 13106,
+  "chain_current": 13151,
   "chain_target": 50000,
-  "chain_rate_per_hour": 218.15861498578187,
-  "chain_estimated_finish": "2026-11-03T05:22:16.804465+00:00",
+  "chain_rate_per_hour": 207.87214481479026,
+  "chain_estimated_finish": "2026-11-03T13:46:25.735382+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -464,7 +464,7 @@
     {
       "id": 3364361,
       "name": "Etop",
-      "hits": 494
+      "hits": 496
     },
     {
       "id": 2840742,
@@ -472,10 +472,10 @@
       "hits": 455
     }
   ],
-  "awards_today": 22,
-  "awards_event_total": 134,
+  "awards_today": 24,
+  "awards_event_total": 136,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-27T04:15:21.058139+00:00",
+  "awards_last_updated_at": "2026-10-27T04:30:22.309887+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
@@ -489,8 +489,8 @@
       "awards": 2
     },
     {
-      "id": 4335708,
-      "name": "LyciumWalker",
+      "id": 4561538,
+      "name": "LilErel",
       "awards": 2
     }
   ]
