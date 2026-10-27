@@ -182,7 +182,10 @@ def update_tracker(
     chain_id = str(chain_id_value) if chain_id_value is not None else None
 
     if tracker.get("activated") and not tracker.get("complete"):
-        if chain_id and tracker.get("chain_id") not in (None, chain_id):
+        previous_chain_id = tracker.get("chain_id")
+        if previous_chain_id is not None:
+            previous_chain_id = str(previous_chain_id)
+        if chain_id and previous_chain_id not in (None, chain_id):
             tracker["samples"] = []
         if chain_id:
             tracker["chain_id"] = chain_id
