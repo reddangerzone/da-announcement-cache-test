@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-27T09:15:16.966372+00:00",
+  "generated_at": "2026-10-27T09:30:20.519385+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 14121,
+  "chain_current": 14140,
   "chain_target": 50000,
-  "chain_rate_per_hour": 150.95289017988418,
-  "chain_estimated_finish": "2026-11-06T06:56:17.297526+00:00",
+  "chain_rate_per_hour": 137.4345241318927,
+  "chain_estimated_finish": "2026-11-07T06:25:47.815895+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -461,13 +461,13 @@
     {
       "id": 2902025,
       "name": "Cptn_HellFire",
-      "hits": 514
+      "hits": 516
     }
   ],
   "awards_today": 41,
   "awards_event_total": 153,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-27T09:15:16.966372+00:00",
+  "awards_last_updated_at": "2026-10-27T09:30:20.519385+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
