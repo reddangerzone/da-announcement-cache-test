@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-27T07:15:17.059664+00:00",
+  "generated_at": "2026-10-27T07:30:19.521325+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 13814,
+  "chain_current": 13900,
   "chain_target": 50000,
-  "chain_rate_per_hour": 236.0874064437482,
-  "chain_estimated_finish": "2026-11-02T16:31:42.527438+00:00",
+  "chain_rate_per_hour": 249.73114729514475,
+  "chain_estimated_finish": "2026-11-02T08:03:39.164732+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -472,10 +472,10 @@
       "hits": 499
     }
   ],
-  "awards_today": 34,
-  "awards_event_total": 146,
+  "awards_today": 39,
+  "awards_event_total": 151,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-27T07:15:17.059664+00:00",
+  "awards_last_updated_at": "2026-10-27T07:30:19.521325+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
@@ -484,14 +484,14 @@
       "awards": 3
     },
     {
-      "id": 4430582,
-      "name": "Utoch",
+      "id": 4531011,
+      "name": "Scaffa",
       "awards": 3
     },
     {
-      "id": 4225544,
-      "name": "CheesySyrup",
-      "awards": 2
+      "id": 4430582,
+      "name": "Utoch",
+      "awards": 3
     }
   ]
 }
