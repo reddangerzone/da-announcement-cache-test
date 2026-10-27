@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-27T12:00:23.948276+00:00",
+  "generated_at": "2026-10-27T12:15:16.784606+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 14698,
+  "chain_current": 14714,
   "chain_target": 50000,
-  "chain_rate_per_hour": 200.70360373047288,
-  "chain_estimated_finish": "2026-11-03T19:53:52.309451+00:00",
+  "chain_rate_per_hour": 197.66999348926265,
+  "chain_estimated_finish": "2026-11-03T22:45:51.499960+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -456,7 +456,7 @@
     {
       "id": 3364361,
       "name": "Etop",
-      "hits": 532
+      "hits": 534
     },
     {
       "id": 2902025,
@@ -464,10 +464,10 @@
       "hits": 520
     }
   ],
-  "awards_today": 50,
-  "awards_event_total": 162,
+  "awards_today": 51,
+  "awards_event_total": 163,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-27T12:00:23.948276+00:00",
+  "awards_last_updated_at": "2026-10-27T12:15:16.784606+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
