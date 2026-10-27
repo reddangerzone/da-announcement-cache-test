@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-27T13:15:17.826044+00:00",
+  "generated_at": "2026-10-27T13:30:24.592459+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 15060,
+  "chain_current": 15129,
   "chain_target": 50000,
-  "chain_rate_per_hour": 238.40345275552733,
-  "chain_estimated_finish": "2026-11-02T15:48:47.634317+00:00",
+  "chain_rate_per_hour": 265.9968576161636,
+  "chain_estimated_finish": "2026-11-02T00:36:08.513620+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -461,29 +461,29 @@
     {
       "id": 2902025,
       "name": "Cptn_HellFire",
-      "hits": 532
+      "hits": 533
     }
   ],
-  "awards_today": 55,
-  "awards_event_total": 167,
+  "awards_today": 62,
+  "awards_event_total": 174,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-27T13:15:17.826044+00:00",
+  "awards_last_updated_at": "2026-10-27T13:30:24.592459+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4561538,
+      "name": "LilErel",
+      "awards": 6
+    },
+    {
+      "id": 4558872,
+      "name": "Maj_saM",
+      "awards": 5
+    },
     {
       "id": 4531011,
       "name": "Scaffa",
       "awards": 4
-    },
-    {
-      "id": 4225544,
-      "name": "CheesySyrup",
-      "awards": 3
-    },
-    {
-      "id": 4561538,
-      "name": "LilErel",
-      "awards": 3
     }
   ]
 }
