@@ -52,6 +52,7 @@ def load_previous_state(path: Path) -> AnnouncementState | None:
         ):
             if data.get(key):
                 data[key] = datetime.fromisoformat(data[key])
+        data["chain_members"] = tuple(data.get("chain_members", ()))
         data["chain_top_hitters"] = tuple(data.get("chain_top_hitters", ()))
         data["award_top_earners"] = tuple(data.get("award_top_earners", ()))
         return AnnouncementState(events=events, **data)
@@ -173,6 +174,8 @@ def main() -> int:
             chain_target=chain.target,
             chain_rate_per_hour=chain.rate_per_hour,
             chain_estimated_finish=chain.estimated_finish,
+            chain_session_id=chain.chain_id,
+            chain_members=chain.members,
             chain_top_hitters=chain.top_hitters,
         )
 

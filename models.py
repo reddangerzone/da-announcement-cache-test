@@ -42,6 +42,8 @@ class AnnouncementState:
     chain_target: int = 50_000
     chain_rate_per_hour: float | None = None
     chain_estimated_finish: datetime | None = None
+    chain_session_id: str | None = None
+    chain_members: tuple[dict[str, Any], ...] = field(default_factory=tuple)
     chain_top_hitters: tuple[dict[str, Any], ...] = field(default_factory=tuple)
     awards_today: int = 0
     awards_event_total: int = 0
@@ -59,6 +61,7 @@ class AnnouncementState:
             value = record[key]
             record[key] = value.isoformat() if value else None
         record["events"] = [event.to_dict() for event in self.events]
+        record["chain_members"] = list(self.chain_members)
         record["chain_top_hitters"] = list(self.chain_top_hitters)
         record["award_top_earners"] = list(self.award_top_earners)
         return record

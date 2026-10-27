@@ -17,6 +17,8 @@ class ChainSnapshot:
     target: int = TARGET_HITS
     rate_per_hour: float | None = None
     estimated_finish: datetime | None = None
+    chain_id: str | None = None
+    members: tuple[dict[str, Any], ...] = ()
     top_hitters: tuple[dict[str, Any], ...] = ()
 
 
@@ -58,6 +60,14 @@ def parse_member_names(payload: dict[str, Any] | None) -> dict[int, str]:
         if name:
             names[player_id] = str(name)
     return names
+
+
+def parse_faction_members(payload: dict[str, Any] | None) -> tuple[dict[str, Any], ...]:
+    names = parse_member_names(payload)
+    return tuple(
+        {"id": player_id, "name": name}
+        for player_id, name in sorted(names.items(), key=lambda row: row[1].casefold())
+    )
 
 
 def parse_top_hitters(
@@ -129,6 +139,7 @@ def parse_top_hitters(
         parsed.append({"id": player_id, "name": str(name), "hits": hits})
     return tuple(sorted(parsed, key=lambda row: (-row["hits"], row["name"].lower()))[:limit])
 
+
 def halloween_event_started(events: Iterable[Any], now: datetime) -> bool:
     now = now.astimezone(UTC)
     return any(
@@ -167,10 +178,14 @@ def update_tracker(
     tracker["activated"] = bool(tracker.get("activated") or event_started)
     chain = current_chain(chain_payload)
     current = chain_number(chain, "current")
-    chain_id = chain.get("id")
+    chain_id_value = chain.get("id")
+    chain_id = str(chain_id_value) if chain_id_value is not None else None
 
     if tracker.get("activated") and not tracker.get("complete"):
-        if chain_id and tracker.get("chain_id") not in (None, chain_id):
+        previous_chain_id = tracker.get("chain_id")
+        if previous_chain_id is not None:
+            previous_chain_id = str(previous_chain_id)
+        if chain_id and previous_chain_id not in (None, chain_id):
             tracker["samples"] = []
         if chain_id:
             tracker["chain_id"] = chain_id
@@ -213,5 +228,7 @@ def update_tracker(
 
     return tracker, ChainSnapshot(
         active=True, current=current, target=target, rate_per_hour=rate,
-        estimated_finish=estimate, top_hitters=top_hitters,
+        estimated_finish=estimate, chain_id=chain_id,
+        members=parse_faction_members(members_payload),
+        top_hitters=top_hitters,
     )
