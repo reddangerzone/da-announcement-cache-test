@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-27T00:30:20.270727+00:00",
+  "generated_at": "2026-10-27T00:45:17.318939+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 12271,
+  "chain_current": 12327,
   "chain_target": 50000,
-  "chain_rate_per_hour": 271.72774404389435,
-  "chain_estimated_finish": "2026-11-01T19:21:15.007599+00:00",
+  "chain_rate_per_hour": 284.9925282851278,
+  "chain_estimated_finish": "2026-11-01T12:56:39.268603+00:00",
   "chain_top_hitters": [
     {
       "id": 1639937,
@@ -61,7 +61,7 @@
     {
       "id": 3364361,
       "name": "Etop",
-      "hits": 486
+      "hits": 494
     },
     {
       "id": 2840742,
@@ -69,12 +69,17 @@
       "hits": 446
     }
   ],
-  "awards_today": 7,
-  "awards_event_total": 119,
+  "awards_today": 10,
+  "awards_event_total": 122,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-27T00:30:20.270727+00:00",
+  "awards_last_updated_at": "2026-10-27T00:45:17.318939+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4178720,
+      "name": "gnat_86",
+      "awards": 2
+    },
     {
       "id": 3743727,
       "name": "Asmo",
@@ -83,11 +88,6 @@
     {
       "id": 3114110,
       "name": "bober",
-      "awards": 1
-    },
-    {
-      "id": 3028726,
-      "name": "daturadreamz",
       "awards": 1
     }
   ]
