@@ -45,13 +45,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-27T21:15:21.034212+00:00",
+  "generated_at": "2026-10-27T21:30:22.143061+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 16827,
+  "chain_current": 16916,
   "chain_target": 50000,
-  "chain_rate_per_hour": 294.73542578780604,
-  "chain_estimated_finish": "2026-11-01T13:48:27.481280+00:00",
+  "chain_rate_per_hour": 299.813024836415,
+  "chain_estimated_finish": "2026-11-01T11:51:17.732824+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -456,18 +456,18 @@
     {
       "id": 3364361,
       "name": "Etop",
-      "hits": 573
+      "hits": 575
     },
     {
       "id": 2840742,
       "name": "Rosti",
-      "hits": 560
+      "hits": 564
     }
   ],
-  "awards_today": 91,
-  "awards_event_total": 203,
+  "awards_today": 92,
+  "awards_event_total": 204,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-27T21:15:21.034212+00:00",
+  "awards_last_updated_at": "2026-10-27T21:30:22.143061+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
