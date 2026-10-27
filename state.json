@@ -45,10 +45,10 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-27T01:57:00.417000+00:00",
+  "generated_at": "2026-10-27T01:59:51.884038+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 12610,
+  "chain_current": 12622,
   "chain_target": 50000,
   "chain_rate_per_hour": null,
   "chain_estimated_finish": null,
@@ -475,7 +475,7 @@
   "awards_today": 15,
   "awards_event_total": 127,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-27T01:57:00.417000+00:00",
+  "awards_last_updated_at": "2026-10-27T01:59:51.884038+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
