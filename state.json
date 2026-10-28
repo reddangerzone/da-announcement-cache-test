@@ -54,13 +54,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-28T21:15:17.243018+00:00",
+  "generated_at": "2026-10-28T21:30:24.131840+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 22321,
+  "chain_current": 22428,
   "chain_target": 50000,
-  "chain_rate_per_hour": 228.35169175216646,
-  "chain_estimated_finish": "2026-11-02T22:28:00.990689+00:00",
+  "chain_rate_per_hour": 270.34006422779896,
+  "chain_estimated_finish": "2026-11-02T03:29:48.356216+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -336,10 +336,6 @@
       "name": "Miiiih"
     },
     {
-      "id": 3950743,
-      "name": "Mikeyest"
-    },
-    {
       "id": 4055616,
       "name": "Mosiulosiu"
     },
@@ -420,6 +416,10 @@
       "name": "Tandris"
     },
     {
+      "id": 4204085,
+      "name": "Tizzoo"
+    },
+    {
       "id": 2864080,
       "name": "TmTheEnchanter"
     },
@@ -477,10 +477,10 @@
       "hits": 743
     }
   ],
-  "awards_today": 88,
-  "awards_event_total": 298,
+  "awards_today": 89,
+  "awards_event_total": 299,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-28T21:15:17.243018+00:00",
+  "awards_last_updated_at": "2026-10-28T21:30:24.131840+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
