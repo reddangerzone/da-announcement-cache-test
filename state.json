@@ -54,13 +54,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-28T04:00:26.075700+00:00",
+  "generated_at": "2026-10-28T04:15:18.214475+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 18350,
+  "chain_current": 18364,
   "chain_target": 50000,
-  "chain_rate_per_hour": 223.4274775863453,
-  "chain_estimated_finish": "2026-11-03T01:39:50.209167+00:00",
+  "chain_rate_per_hour": 212.774039171543,
+  "chain_estimated_finish": "2026-11-03T08:56:19.003072+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -477,12 +477,17 @@
       "hits": 598
     }
   ],
-  "awards_today": 25,
-  "awards_event_total": 235,
+  "awards_today": 27,
+  "awards_event_total": 237,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-28T04:00:26.075700+00:00",
+  "awards_last_updated_at": "2026-10-28T04:15:18.214475+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4404877,
+      "name": "DeadlyAce",
+      "awards": 2
+    },
     {
       "id": 4230165,
       "name": "MeowztheCat",
@@ -492,11 +497,6 @@
       "id": 3973713,
       "name": "OldmanGreen",
       "awards": 2
-    },
-    {
-      "id": 3102001,
-      "name": "1DvsBstrd",
-      "awards": 1
     }
   ]
 }
