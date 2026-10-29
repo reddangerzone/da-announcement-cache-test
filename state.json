@@ -54,13 +54,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-29T00:02:12.323626+00:00",
+  "generated_at": "2026-10-29T00:15:17.252059+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 23228,
+  "chain_current": 23282,
   "chain_target": 50000,
-  "chain_rate_per_hour": null,
-  "chain_estimated_finish": null,
+  "chain_rate_per_hour": 93521.69589320273,
+  "chain_estimated_finish": "2026-10-29T00:32:25.727848+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -474,15 +474,25 @@
     {
       "id": 2840742,
       "name": "Rosti",
-      "hits": 784
+      "hits": 794
     }
   ],
-  "awards_today": 1,
-  "awards_event_total": 315,
+  "awards_today": 6,
+  "awards_event_total": 320,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-29T00:02:12.323626+00:00",
+  "awards_last_updated_at": "2026-10-29T00:15:17.252059+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4281041,
+      "name": "Eeyor3",
+      "awards": 2
+    },
+    {
+      "id": 4055888,
+      "name": "Skybr3aker",
+      "awards": 2
+    },
     {
       "id": 4014455,
       "name": "Babydadi",
