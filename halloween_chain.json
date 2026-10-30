@@ -7,22 +7,26 @@
     {
       "at": "2026-10-30T00:00:24.914302+00:00",
       "hits": 0
+    },
+    {
+      "at": "2026-10-30T00:15:18.409837+00:00",
+      "hits": 28897
     }
   ],
   "top_hitters": [
     {
+      "id": 1639937,
+      "name": "HAM432",
+      "hits": 1043
+    },
+    {
       "id": 3386852,
-      "name": "Unknown",
+      "name": "LinkJason10j",
       "hits": 1033
     },
     {
-      "id": 1639937,
-      "name": "Unknown",
-      "hits": 1009
-    },
-    {
       "id": 2840742,
-      "name": "Unknown",
+      "name": "Rosti",
       "hits": 971
     }
   ]
