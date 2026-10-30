@@ -54,13 +54,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-30T10:45:19.109812+00:00",
+  "generated_at": "2026-10-30T11:00:26.290820+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 31167,
+  "chain_current": 31206,
   "chain_target": 50000,
-  "chain_rate_per_hour": 235.3748822778342,
-  "chain_estimated_finish": "2026-11-02T18:46:05.138105+00:00",
+  "chain_rate_per_hour": 204.98515623423484,
+  "chain_estimated_finish": "2026-11-03T06:41:31.165970+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -481,12 +481,17 @@
       "hits": 1083
     }
   ],
-  "awards_today": 29,
-  "awards_event_total": 434,
+  "awards_today": 33,
+  "awards_event_total": 438,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-30T10:45:19.109812+00:00",
+  "awards_last_updated_at": "2026-10-30T11:00:26.290820+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4524756,
+      "name": "Miiiih",
+      "awards": 4
+    },
     {
       "id": 3896312,
       "name": "TonyJanelas",
@@ -495,11 +500,6 @@
     {
       "id": 3114110,
       "name": "bober",
-      "awards": 2
-    },
-    {
-      "id": 3028726,
-      "name": "daturadreamz",
       "awards": 2
     }
   ]
