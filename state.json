@@ -54,13 +54,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-10-31T19:00:22.323060+00:00",
+  "generated_at": "2026-10-31T19:15:14.516273+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 38906,
+  "chain_current": 38942,
   "chain_target": 50000,
-  "chain_rate_per_hour": 222.68274862920373,
-  "chain_estimated_finish": "2026-11-02T20:49:33.441392+00:00",
+  "chain_rate_per_hour": 214.08072294246497,
+  "chain_estimated_finish": "2026-11-02T22:54:26.803115+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -468,7 +468,7 @@
     {
       "id": 1639937,
       "name": "HAM432",
-      "hits": 1335
+      "hits": 1336
     },
     {
       "id": 3386852,
@@ -484,7 +484,7 @@
   "awards_today": 103,
   "awards_event_total": 574,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-10-31T19:00:22.323060+00:00",
+  "awards_last_updated_at": "2026-10-31T19:15:14.516273+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
