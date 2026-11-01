@@ -54,13 +54,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-01T08:15:19.815551+00:00",
+  "generated_at": "2026-11-01T08:30:20.548077+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 42214,
+  "chain_current": 42254,
   "chain_target": 50000,
-  "chain_rate_per_hour": 342.94120519755944,
-  "chain_estimated_finish": "2026-11-02T06:57:32.776114+00:00",
+  "chain_rate_per_hour": 327.6577136507033,
+  "chain_estimated_finish": "2026-11-02T08:08:46.434001+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -481,10 +481,10 @@
       "hits": 1451
     }
   ],
-  "awards_today": 20,
-  "awards_event_total": 609,
+  "awards_today": 23,
+  "awards_event_total": 612,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-01T08:15:19.815551+00:00",
+  "awards_last_updated_at": "2026-11-01T08:30:20.548077+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
@@ -493,13 +493,13 @@
       "awards": 4
     },
     {
-      "id": 3989123,
-      "name": "LOKIWIZARD",
+      "id": 4222362,
+      "name": "Dr4g0nxx",
       "awards": 2
     },
     {
-      "id": 4564563,
-      "name": "Lucannus",
+      "id": 3989123,
+      "name": "LOKIWIZARD",
       "awards": 2
     }
   ]
