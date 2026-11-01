@@ -54,13 +54,13 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-01T03:30:21.872107+00:00",
+  "generated_at": "2026-11-01T03:45:15.040914+00:00",
   "stale_reason": null,
   "halloween_active": true,
-  "chain_current": 41014,
+  "chain_current": 41025,
   "chain_target": 50000,
-  "chain_rate_per_hour": 246.01228614549012,
-  "chain_estimated_finish": "2026-11-02T16:01:57.743744+00:00",
+  "chain_rate_per_hour": 229.33352238484719,
+  "chain_estimated_finish": "2026-11-02T18:53:21.552681+00:00",
   "chain_session_id": "72070299",
   "chain_members": [
     {
@@ -468,7 +468,7 @@
     {
       "id": 2840742,
       "name": "Rosti",
-      "hits": 1507
+      "hits": 1508
     },
     {
       "id": 3386852,
@@ -484,7 +484,7 @@
   "awards_today": 10,
   "awards_event_total": 599,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-01T03:30:21.872107+00:00",
+  "awards_last_updated_at": "2026-11-01T03:45:15.040914+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
