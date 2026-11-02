@@ -1,7 +1,7 @@
 {
   "year": 2026,
   "activated": true,
-  "complete": false,
+  "complete": true,
   "chain_id": "72070299",
   "samples": [
     {
