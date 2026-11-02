@@ -1,5 +1,5 @@
 {
-  "mode": "not_enlisted",
+  "mode": "stale",
   "headline": "AND NOW OUR WATCH BEGINS",
   "target_at": null,
   "opponent_name": null,
@@ -45,8 +45,8 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-01T23:45:17.713487+00:00",
-  "stale_reason": null,
+  "generated_at": "2026-11-02T00:00:22.313969+00:00",
+  "stale_reason": "Ranked-war API data was unavailable",
   "halloween_active": true,
   "chain_current": 45527,
   "chain_target": 50000,
