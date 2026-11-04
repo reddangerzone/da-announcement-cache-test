@@ -7,36 +7,8 @@
   "war_id": null,
   "war_label": null,
   "notes": "HALLOWEEN CHAIN SOOOOOON!",
-  "events": [
-    {
-      "title": "World Diabetes Day",
-      "starts_at": "2026-11-14T00:00:00+00:00",
-      "ends_at": "2026-11-14T23:59:59+00:00",
-      "description": "Candy effects are tripled",
-      "source": "torn",
-      "kind": "event",
-      "fixed_start_time": false
-    },
-    {
-      "title": "Torn Anniversary",
-      "starts_at": "2026-11-15T00:00:00+00:00",
-      "ends_at": "2026-11-15T23:59:59+00:00",
-      "description": "Torn turns 22 years old",
-      "source": "torn",
-      "kind": "event",
-      "fixed_start_time": true
-    },
-    {
-      "title": "Black Friday",
-      "starts_at": "2026-11-27T00:00:00+00:00",
-      "ends_at": "2026-11-27T23:59:59+00:00",
-      "description": "Torn's yearly dollar sale sees many bazaars listing goods for $1",
-      "source": "torn",
-      "kind": "event",
-      "fixed_start_time": true
-    }
-  ],
-  "generated_at": "2026-11-03T23:45:21.831884+00:00",
+  "events": [],
+  "generated_at": "2026-11-04T00:00:22.426177+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -46,26 +18,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 51,
+  "awards_today": 0,
   "awards_event_total": 828,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-03T23:45:21.831884+00:00",
+  "awards_last_updated_at": "2026-11-04T00:00:22.426177+00:00",
   "awards_first_day_partial": false,
-  "award_top_earners": [
-    {
-      "id": 3028726,
-      "name": "daturadreamz",
-      "awards": 5
-    },
-    {
-      "id": 4553968,
-      "name": "AngeliousWonder",
-      "awards": 3
-    },
-    {
-      "id": 4531637,
-      "name": "chic101",
-      "awards": 3
-    }
-  ]
+  "award_top_earners": []
 }
