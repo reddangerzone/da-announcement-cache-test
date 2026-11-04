@@ -1,7 +1,7 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
+  "mode": "awaiting_matchmaking",
+  "headline": "NEXT MATCHMAKING",
+  "target_at": "2026-11-10T12:00:00+00:00",
   "opponent_name": null,
   "opponent_id": null,
   "war_id": null,
@@ -36,7 +36,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-04T09:30:17.929189+00:00",
+  "generated_at": "2026-11-04T10:15:20.434209+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -49,7 +49,7 @@
   "awards_today": 17,
   "awards_event_total": 845,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-04T09:30:17.929189+00:00",
+  "awards_last_updated_at": "2026-11-04T10:15:20.434209+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
