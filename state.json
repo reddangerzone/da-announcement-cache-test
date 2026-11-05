@@ -1,5 +1,5 @@
 {
-  "mode": "awaiting_matchmaking",
+  "mode": "stale",
   "headline": "NEXT MATCHMAKING",
   "target_at": "2026-11-10T12:00:00+00:00",
   "opponent_name": null,
@@ -36,8 +36,8 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-05T10:45:15.832296+00:00",
-  "stale_reason": null,
+  "generated_at": "2026-11-05T11:00:22.551929+00:00",
+  "stale_reason": "Ranked-war API data was unavailable",
   "halloween_active": false,
   "chain_current": 0,
   "chain_target": 50000,
