@@ -1,5 +1,5 @@
 {
-  "mode": "stale",
+  "mode": "awaiting_matchmaking",
   "headline": "NEXT MATCHMAKING",
   "target_at": "2026-11-10T12:00:00+00:00",
   "opponent_name": null,
@@ -36,8 +36,8 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-05T00:00:29.911479+00:00",
-  "stale_reason": "Ranked-war API data was unavailable",
+  "generated_at": "2026-11-05T00:15:23.011839+00:00",
+  "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
   "chain_target": 50000,
@@ -46,26 +46,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 28,
+  "awards_today": 0,
   "awards_event_total": 856,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-04T23:45:14.977298+00:00",
+  "awards_last_updated_at": "2026-11-05T00:15:23.011839+00:00",
   "awards_first_day_partial": false,
-  "award_top_earners": [
-    {
-      "id": 4404877,
-      "name": "DeadlyAce",
-      "awards": 3
-    },
-    {
-      "id": 4553968,
-      "name": "AngeliousWonder",
-      "awards": 2
-    },
-    {
-      "id": 4370545,
-      "name": "ChocolatePie",
-      "awards": 2
-    }
-  ]
+  "award_top_earners": []
 }
