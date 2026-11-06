@@ -36,7 +36,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-06T11:30:19.126388+00:00",
+  "generated_at": "2026-11-06T11:45:15.968035+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -46,12 +46,17 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 14,
-  "awards_event_total": 901,
+  "awards_today": 16,
+  "awards_event_total": 903,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-06T11:30:19.126388+00:00",
+  "awards_last_updated_at": "2026-11-06T11:45:15.968035+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4531637,
+      "name": "chic101",
+      "awards": 2
+    },
     {
       "id": 4370545,
       "name": "ChocolatePie",
@@ -61,11 +66,6 @@
       "id": 4531011,
       "name": "Scaffa",
       "awards": 2
-    },
-    {
-      "id": 4014455,
-      "name": "Babydadi",
-      "awards": 1
     }
   ]
 }
