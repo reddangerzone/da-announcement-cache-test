@@ -36,7 +36,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-06T00:45:15.348322+00:00",
+  "generated_at": "2026-11-06T01:00:20.917418+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -46,15 +46,20 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 1,
-  "awards_event_total": 888,
+  "awards_today": 2,
+  "awards_event_total": 889,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-06T00:45:15.348322+00:00",
+  "awards_last_updated_at": "2026-11-06T01:00:20.917418+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
       "id": 2549782,
       "name": "Highjhacker",
+      "awards": 1
+    },
+    {
+      "id": 4564563,
+      "name": "Lucannus",
       "awards": 1
     }
   ]
