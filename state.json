@@ -36,7 +36,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-06T08:15:15.238914+00:00",
+  "generated_at": "2026-11-06T08:30:18.492413+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -46,10 +46,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 11,
-  "awards_event_total": 898,
+  "awards_today": 12,
+  "awards_event_total": 899,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-06T08:15:15.238914+00:00",
+  "awards_last_updated_at": "2026-11-06T08:30:18.492413+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
@@ -58,13 +58,13 @@
       "awards": 2
     },
     {
-      "id": 4411691,
-      "name": "Depaganteng",
-      "awards": 1
+      "id": 4531011,
+      "name": "Scaffa",
+      "awards": 2
     },
     {
-      "id": 3364361,
-      "name": "Etop",
+      "id": 4411691,
+      "name": "Depaganteng",
       "awards": 1
     }
   ]
