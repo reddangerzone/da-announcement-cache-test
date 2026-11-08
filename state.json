@@ -36,7 +36,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-08T01:30:19.085237+00:00",
+  "generated_at": "2026-11-08T01:45:16.058142+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -46,12 +46,17 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 9,
-  "awards_event_total": 954,
+  "awards_today": 13,
+  "awards_event_total": 958,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-08T01:30:19.085237+00:00",
+  "awards_last_updated_at": "2026-11-08T01:45:16.058142+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4602888,
+      "name": "Holydarthbacon",
+      "awards": 4
+    },
     {
       "id": 4411691,
       "name": "Depaganteng",
@@ -61,11 +66,6 @@
       "id": 4524756,
       "name": "Miiiih",
       "awards": 2
-    },
-    {
-      "id": 4353838,
-      "name": "Cuppy",
-      "awards": 1
     }
   ]
 }
