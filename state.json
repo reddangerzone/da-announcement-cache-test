@@ -36,7 +36,7 @@
       "fixed_start_time": true
     }
   ],
-  "generated_at": "2026-11-08T17:00:20.637608+00:00",
+  "generated_at": "2026-11-08T17:15:17.363748+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -46,10 +46,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 21,
-  "awards_event_total": 966,
+  "awards_today": 22,
+  "awards_event_total": 967,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-08T17:00:20.637608+00:00",
+  "awards_last_updated_at": "2026-11-08T17:15:17.363748+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
@@ -63,8 +63,8 @@
       "awards": 2
     },
     {
-      "id": 4558872,
-      "name": "Maj_saM",
+      "id": 4564563,
+      "name": "Lucannus",
       "awards": 2
     }
   ]
