@@ -45,7 +45,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-10T07:15:17.461230+00:00",
+  "generated_at": "2026-11-10T07:30:19.650662+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -55,10 +55,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 14,
-  "awards_event_total": 902,
+  "awards_today": 16,
+  "awards_event_total": 904,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-10T07:15:17.461230+00:00",
+  "awards_last_updated_at": "2026-11-10T07:30:19.650662+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
@@ -72,8 +72,8 @@
       "awards": 2
     },
     {
-      "id": 4531011,
-      "name": "Scaffa",
+      "id": 4404877,
+      "name": "DeadlyAce",
       "awards": 2
     }
   ]
