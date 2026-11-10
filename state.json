@@ -1,11 +1,11 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
-  "opponent_name": null,
-  "opponent_id": null,
-  "war_id": null,
-  "war_label": null,
+  "mode": "matched",
+  "headline": "NEXT RANKED WAR",
+  "target_at": "2026-11-14T18:00:00+00:00",
+  "opponent_name": "BoW - Hidden Shadows",
+  "opponent_id": 42505,
+  "war_id": 52396,
+  "war_label": "termed",
   "notes": "Enjoy some training time! Next enlistment 11/10",
   "events": [
     {
@@ -45,7 +45,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-10T12:00:21.410052+00:00",
+  "generated_at": "2026-11-10T12:15:19.157954+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -55,10 +55,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 17,
-  "awards_event_total": 905,
+  "awards_today": 18,
+  "awards_event_total": 906,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-10T12:00:21.410052+00:00",
+  "awards_last_updated_at": "2026-11-10T12:15:19.157954+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
