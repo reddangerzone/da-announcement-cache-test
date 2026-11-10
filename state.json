@@ -45,7 +45,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-10T00:30:22.224508+00:00",
+  "generated_at": "2026-11-10T00:45:17.232698+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -55,15 +55,20 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 1,
-  "awards_event_total": 889,
+  "awards_today": 2,
+  "awards_event_total": 890,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-10T00:30:22.224508+00:00",
+  "awards_last_updated_at": "2026-11-10T00:45:17.232698+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
       "id": 2549781,
       "name": "Jimbiscus",
+      "awards": 1
+    },
+    {
+      "id": 4512382,
+      "name": "Theliquorwalrus",
       "awards": 1
     }
   ]
