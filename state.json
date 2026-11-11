@@ -45,7 +45,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-11T04:15:18.309250+00:00",
+  "generated_at": "2026-11-11T04:30:21.532136+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -55,10 +55,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 10,
-  "awards_event_total": 827,
+  "awards_today": 11,
+  "awards_event_total": 828,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-11T04:15:18.309250+00:00",
+  "awards_last_updated_at": "2026-11-11T04:30:21.532136+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
@@ -67,13 +67,13 @@
       "awards": 2
     },
     {
-      "id": 1475187,
-      "name": "bkklusoe",
+      "id": 4129769,
+      "name": "BigG1213",
       "awards": 1
     },
     {
-      "id": 4531637,
-      "name": "chic101",
+      "id": 1475187,
+      "name": "bkklusoe",
       "awards": 1
     }
   ]
