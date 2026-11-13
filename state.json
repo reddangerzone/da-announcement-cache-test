@@ -1,5 +1,5 @@
 {
-  "mode": "matched",
+  "mode": "stale",
   "headline": "NEXT RANKED WAR",
   "target_at": "2026-11-14T18:00:00+00:00",
   "opponent_name": "BoW - Hidden Shadows",
@@ -45,8 +45,8 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-12T23:45:17.869487+00:00",
-  "stale_reason": null,
+  "generated_at": "2026-11-13T00:00:22.965798+00:00",
+  "stale_reason": "Ranked-war API data was unavailable",
   "halloween_active": false,
   "chain_current": 0,
   "chain_target": 50000,
