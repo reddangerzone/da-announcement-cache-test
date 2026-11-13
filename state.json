@@ -45,7 +45,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-13T00:45:15.562999+00:00",
+  "generated_at": "2026-11-13T01:00:24.384287+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -55,16 +55,21 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 2,
-  "awards_event_total": 670,
+  "awards_today": 3,
+  "awards_event_total": 671,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-13T00:45:15.562999+00:00",
+  "awards_last_updated_at": "2026-11-13T01:00:24.384287+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
       "id": 4353838,
       "name": "Cuppy",
       "awards": 2
+    },
+    {
+      "id": 3609578,
+      "name": "SkodakSlovansky",
+      "awards": 1
     }
   ]
 }
