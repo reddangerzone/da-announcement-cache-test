@@ -9,15 +9,6 @@
   "notes": "Stack up! Revives off!",
   "events": [
     {
-      "title": "Torn Anniversary",
-      "starts_at": "2026-11-15T00:00:00+00:00",
-      "ends_at": "2026-11-15T23:59:59+00:00",
-      "description": "Torn turns 22 years old",
-      "source": "torn",
-      "kind": "event",
-      "fixed_start_time": true
-    },
-    {
       "title": "Black Friday",
       "starts_at": "2026-11-27T00:00:00+00:00",
       "ends_at": "2026-11-27T23:59:59+00:00",
@@ -36,7 +27,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-15T23:58:33.717888+00:00",
+  "generated_at": "2026-11-16T00:00:29.495828+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -46,26 +37,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 99,
-  "awards_event_total": 650,
+  "awards_today": 0,
+  "awards_event_total": 578,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-15T23:58:33.717888+00:00",
+  "awards_last_updated_at": "2026-11-16T00:00:29.495828+00:00",
   "awards_first_day_partial": false,
-  "award_top_earners": [
-    {
-      "id": 4602888,
-      "name": "Holydarthbacon",
-      "awards": 9
-    },
-    {
-      "id": 3028726,
-      "name": "daturadreamz",
-      "awards": 4
-    },
-    {
-      "id": 4564563,
-      "name": "Lucannus",
-      "awards": 4
-    }
-  ]
+  "award_top_earners": []
 }
