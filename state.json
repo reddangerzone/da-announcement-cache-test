@@ -1,12 +1,12 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
+  "mode": "awaiting_matchmaking",
+  "headline": "NEXT MATCHMAKING",
+  "target_at": "2026-11-17T12:00:00+00:00",
   "opponent_name": null,
   "opponent_id": null,
   "war_id": null,
   "war_label": null,
-  "notes": "We are not currently enlisted for a ranked war.",
+  "notes": "",
   "events": [
     {
       "title": "Black Friday",
@@ -27,7 +27,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-17T00:00:26.219678+00:00",
+  "generated_at": "2026-11-17T00:15:22.618225+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -37,10 +37,16 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 0,
-  "awards_event_total": 484,
+  "awards_today": 1,
+  "awards_event_total": 485,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-17T00:00:26.219678+00:00",
+  "awards_last_updated_at": "2026-11-17T00:15:22.618225+00:00",
   "awards_first_day_partial": false,
-  "award_top_earners": []
+  "award_top_earners": [
+    {
+      "id": 4531011,
+      "name": "Scaffa",
+      "awards": 1
+    }
+  ]
 }
