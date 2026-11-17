@@ -27,7 +27,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-17T01:00:21.283049+00:00",
+  "generated_at": "2026-11-17T01:15:20.031645+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -37,10 +37,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 4,
-  "awards_event_total": 488,
+  "awards_today": 5,
+  "awards_event_total": 489,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-17T01:00:21.283049+00:00",
+  "awards_last_updated_at": "2026-11-17T01:15:20.031645+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
@@ -54,8 +54,8 @@
       "awards": 1
     },
     {
-      "id": 4531011,
-      "name": "Scaffa",
+      "id": 2383138,
+      "name": "PapaBear",
       "awards": 1
     }
   ]
