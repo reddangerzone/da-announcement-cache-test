@@ -1,12 +1,12 @@
 {
-  "mode": "not_enlisted",
-  "headline": "NEXT ENLISTMENT",
-  "target_at": null,
-  "opponent_name": null,
-  "opponent_id": null,
-  "war_id": null,
-  "war_label": null,
-  "notes": "We are not currently enlisted for a ranked war.",
+  "mode": "matched",
+  "headline": "NEXT RANKED WAR",
+  "target_at": "2026-11-21T17:00:00+00:00",
+  "opponent_name": "Nub Army",
+  "opponent_id": 42435,
+  "war_id": 52841,
+  "war_label": "negotiating",
+  "notes": "Terms are still being negotiated. Watch Discord for the final war plan.",
   "events": [
     {
       "title": "Black Friday",
@@ -27,7 +27,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-17T12:00:27.402445+00:00",
+  "generated_at": "2026-11-17T12:15:17.982866+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -37,10 +37,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 14,
-  "awards_event_total": 498,
+  "awards_today": 16,
+  "awards_event_total": 500,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-17T12:00:27.402445+00:00",
+  "awards_last_updated_at": "2026-11-17T12:15:17.982866+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
