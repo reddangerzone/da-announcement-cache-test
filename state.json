@@ -1,12 +1,12 @@
 {
-  "mode": "awaiting_matchmaking",
-  "headline": "NEXT MATCHMAKING",
-  "target_at": "2026-11-17T12:00:00+00:00",
+  "mode": "not_enlisted",
+  "headline": "NEXT ENLISTMENT",
+  "target_at": null,
   "opponent_name": null,
   "opponent_id": null,
   "war_id": null,
   "war_label": null,
-  "notes": "",
+  "notes": "We are not currently enlisted for a ranked war.",
   "events": [
     {
       "title": "Black Friday",
@@ -27,7 +27,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-16T23:48:13.669586+00:00",
+  "generated_at": "2026-11-17T00:00:26.219678+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -37,26 +37,10 @@
   "chain_session_id": null,
   "chain_members": [],
   "chain_top_hitters": [],
-  "awards_today": 22,
-  "awards_event_total": 600,
+  "awards_today": 0,
+  "awards_event_total": 484,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-16T23:48:13.669586+00:00",
+  "awards_last_updated_at": "2026-11-17T00:00:26.219678+00:00",
   "awards_first_day_partial": false,
-  "award_top_earners": [
-    {
-      "id": 2811137,
-      "name": "Sarge666",
-      "awards": 3
-    },
-    {
-      "id": 4353838,
-      "name": "Cuppy",
-      "awards": 2
-    },
-    {
-      "id": 4558872,
-      "name": "Maj_saM",
-      "awards": 2
-    }
-  ]
+  "award_top_earners": []
 }
