@@ -5,8 +5,8 @@
   "opponent_name": "Nub Army",
   "opponent_id": 42435,
   "war_id": 52841,
-  "war_label": "negotiating",
-  "notes": "Terms are still being negotiated. Watch Discord for the final war plan.",
+  "war_label": "termed",
+  "notes": "We will get 60% of the total loot as well as the win.\n\n13,65kR Target score, don't overshoot\n\nNo hitting onliners or idle <10min unless you have a deal",
   "events": [
     {
       "title": "Black Friday",
@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-20T00:30:20.868593+00:00",
+  "generated_at": "2026-11-20T00:45:18.208395+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -49,7 +49,7 @@
   "awards_today": 1,
   "awards_event_total": 448,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-20T00:30:20.868593+00:00",
+  "awards_last_updated_at": "2026-11-20T00:45:18.208395+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
