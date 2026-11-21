@@ -1,6 +1,6 @@
 {
-  "mode": "matched",
-  "headline": "NEXT RANKED WAR",
+  "mode": "active_war",
+  "headline": "WAR IS LIVE",
   "target_at": "2026-11-21T17:00:00+00:00",
   "opponent_name": "Nub Army",
   "opponent_id": 42435,
@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-21T16:45:17.736466+00:00",
+  "generated_at": "2026-11-21T17:00:23.783059+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -49,7 +49,7 @@
   "awards_today": 17,
   "awards_event_total": 465,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-21T16:45:17.736466+00:00",
+  "awards_last_updated_at": "2026-11-21T17:00:23.783059+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
