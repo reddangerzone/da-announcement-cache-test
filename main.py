@@ -4,7 +4,7 @@ import argparse
 import json
 import sys
 from dataclasses import replace
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -18,6 +18,7 @@ from award_tracker import load_award_tracker, save_award_tracker, update_award_t
 from chain_adapter import (
     halloween_event_started,
     load_tracker,
+    parse_faction_members,
     save_tracker,
     update_tracker,
 )
@@ -53,11 +54,46 @@ def load_previous_state(path: Path) -> AnnouncementState | None:
             if data.get(key):
                 data[key] = datetime.fromisoformat(data[key])
         data["chain_members"] = tuple(data.get("chain_members", ()))
+        data["faction_members"] = tuple(data.get("faction_members", ()))
         data["chain_top_hitters"] = tuple(data.get("chain_top_hitters", ()))
         data["award_top_earners"] = tuple(data.get("award_top_earners", ()))
         return AnnouncementState(events=events, **data)
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
         return None
+
+
+def load_daily_faction_roster(path: Path, *, now: datetime, faction_id: int) -> tuple[dict[str, object], ...]:
+    cached: dict[str, object] = {}
+    try:
+        loaded = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(loaded, dict):
+            cached = loaded
+    except (OSError, ValueError, TypeError, json.JSONDecodeError):
+        pass
+
+    cached_members = parse_faction_members({"members": cached.get("members", [])})
+    try:
+        cached_at = datetime.fromisoformat(str(cached.get("fetched_at", ""))).astimezone(UTC)
+        if cached_members and now.astimezone(UTC) - cached_at < timedelta(hours=24):
+            return cached_members
+    except (TypeError, ValueError):
+        pass
+
+    try:
+        payload = api.get("faction_members", fac_id=faction_id) or {}
+        members = parse_faction_members(payload)
+        if members:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps({
+                "fetched_at": now.astimezone(UTC).isoformat(),
+                "members": list(members),
+            }, indent=2) + "\n", encoding="utf-8")
+            return members
+        print("Faction roster refresh returned no members; keeping the previous roster")
+    except Exception as error:
+        print(f"Faction roster refresh failed; keeping the previous roster: {error}")
+
+    return cached_members
 
 
 def main() -> int:
@@ -122,6 +158,13 @@ def main() -> int:
         lookahead_days=config["lookahead_days"],
         max_events=config["max_events"],
     )
+
+    faction_roster = load_daily_faction_roster(
+        PROJECT_ROOT / "faction_roster.json",
+        now=now,
+        faction_id=int(config["faction_id"]),
+    )
+    state = replace(state, faction_members=faction_roster)
 
     tracker = load_tracker(tracker_output, now.year)
     event_started = halloween_event_started(torn_events, now)
