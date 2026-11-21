@@ -44,6 +44,7 @@ class AnnouncementState:
     chain_estimated_finish: datetime | None = None
     chain_session_id: str | None = None
     chain_members: tuple[dict[str, Any], ...] = field(default_factory=tuple)
+    faction_members: tuple[dict[str, Any], ...] = field(default_factory=tuple)
     chain_top_hitters: tuple[dict[str, Any], ...] = field(default_factory=tuple)
     awards_today: int = 0
     awards_event_total: int = 0
