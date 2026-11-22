@@ -1,5 +1,5 @@
 {
-  "mode": "stale",
+  "mode": "active_war",
   "headline": "WAR IS LIVE",
   "target_at": "2026-11-21T17:00:00+00:00",
   "opponent_name": "Nub Army",
@@ -36,8 +36,8 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-22T00:00:25.866181+00:00",
-  "stale_reason": "Ranked-war API data was unavailable",
+  "generated_at": "2026-11-22T00:15:15.689479+00:00",
+  "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
   "chain_target": 50000,
@@ -380,26 +380,10 @@
     }
   ],
   "chain_top_hitters": [],
-  "awards_today": 36,
-  "awards_event_total": 484,
+  "awards_today": 0,
+  "awards_event_total": 454,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-21T23:53:05.751900+00:00",
+  "awards_last_updated_at": "2026-11-22T00:15:15.689479+00:00",
   "awards_first_day_partial": false,
-  "award_top_earners": [
-    {
-      "id": 4531011,
-      "name": "Scaffa",
-      "awards": 6
-    },
-    {
-      "id": 4173088,
-      "name": "LindsayHales",
-      "awards": 3
-    },
-    {
-      "id": 4198959,
-      "name": "Brianthemidling",
-      "awards": 2
-    }
-  ]
+  "award_top_earners": []
 }
