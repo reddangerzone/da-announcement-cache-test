@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-22T02:30:30.371220+00:00",
+  "generated_at": "2026-11-22T02:45:24.023141+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -380,12 +380,17 @@
     }
   ],
   "chain_top_hitters": [],
-  "awards_today": 5,
-  "awards_event_total": 459,
+  "awards_today": 7,
+  "awards_event_total": 461,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-22T02:30:30.371220+00:00",
+  "awards_last_updated_at": "2026-11-22T02:45:24.023141+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4204085,
+      "name": "Tizzoo",
+      "awards": 2
+    },
     {
       "id": 4553968,
       "name": "AngeliousWonder",
@@ -394,11 +399,6 @@
     {
       "id": 4353838,
       "name": "Cuppy",
-      "awards": 1
-    },
-    {
-      "id": 4138328,
-      "name": "duca1989",
       "awards": 1
     }
   ]
