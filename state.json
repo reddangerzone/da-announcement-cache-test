@@ -1,11 +1,11 @@
 {
-  "mode": "active_war",
-  "headline": "WAR IS LIVE",
-  "target_at": "2026-11-21T17:00:00+00:00",
-  "opponent_name": "Nub Army",
-  "opponent_id": 42435,
-  "war_id": 52841,
-  "war_label": "termed",
+  "mode": "not_enlisted",
+  "headline": "NEXT ENLISTMENT",
+  "target_at": null,
+  "opponent_name": null,
+  "opponent_id": null,
+  "war_id": null,
+  "war_label": null,
   "notes": "We will get 60% of the total loot as well as the win.\n\n13,65kR Target score, don't overshoot\n\nNo hitting onliners or idle <10min unless you have a deal",
   "events": [
     {
@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-24T02:45:18.778231+00:00",
+  "generated_at": "2026-11-24T03:00:22.901445+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -383,7 +383,7 @@
   "awards_today": 8,
   "awards_event_total": 459,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-24T02:45:18.778231+00:00",
+  "awards_last_updated_at": "2026-11-24T03:00:22.901445+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
