@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-24T02:30:19.522196+00:00",
+  "generated_at": "2026-11-24T02:45:18.778231+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -380,12 +380,17 @@
     }
   ],
   "chain_top_hitters": [],
-  "awards_today": 6,
-  "awards_event_total": 457,
+  "awards_today": 8,
+  "awards_event_total": 459,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-24T02:30:19.522196+00:00",
+  "awards_last_updated_at": "2026-11-24T02:45:18.778231+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4531637,
+      "name": "chic101",
+      "awards": 2
+    },
     {
       "id": 4353838,
       "name": "Cuppy",
@@ -394,11 +399,6 @@
     {
       "id": 3364361,
       "name": "Etop",
-      "awards": 1
-    },
-    {
-      "id": 4223958,
-      "name": "iieell",
       "awards": 1
     }
   ]
