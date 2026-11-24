@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-24T11:00:22.911597+00:00",
+  "generated_at": "2026-11-24T11:15:17.455064+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -380,26 +380,26 @@
     }
   ],
   "chain_top_hitters": [],
-  "awards_today": 11,
-  "awards_event_total": 462,
+  "awards_today": 14,
+  "awards_event_total": 465,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-24T11:00:22.911597+00:00",
+  "awards_last_updated_at": "2026-11-24T11:15:17.455064+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4262062,
+      "name": "KristenWallace",
+      "awards": 2
+    },
     {
       "id": 4531637,
       "name": "Player 4531637",
       "awards": 2
     },
     {
-      "id": 4129769,
-      "name": "BigG1213",
-      "awards": 1
-    },
-    {
-      "id": 4198959,
-      "name": "Brianthemidling",
-      "awards": 1
+      "id": 4465166,
+      "name": "SmoothieJo",
+      "awards": 2
     }
   ]
 }
