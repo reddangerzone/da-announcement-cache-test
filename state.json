@@ -1,5 +1,5 @@
 {
-  "mode": "active_war",
+  "mode": "stale",
   "headline": "WAR IS LIVE",
   "target_at": "2026-11-21T17:00:00+00:00",
   "opponent_name": "Nub Army",
@@ -36,8 +36,8 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-23T23:45:17.864455+00:00",
-  "stale_reason": null,
+  "generated_at": "2026-11-24T00:00:27.917846+00:00",
+  "stale_reason": "Ranked-war API data was unavailable",
   "halloween_active": false,
   "chain_current": 0,
   "chain_target": 50000,
