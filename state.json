@@ -5,8 +5,8 @@
   "opponent_name": "Chaos Cartel",
   "opponent_id": 51855,
   "war_id": 53343,
-  "war_label": "termed",
-  "notes": "We will get 60% of the total loot as well as the win.\n\n13,65kR Target score, don't overshoot\n\nNo hitting onliners or idle <10min unless you have a deal",
+  "war_label": "real",
+  "notes": "Stack up! Revives off!",
   "events": [
     {
       "title": "Black Friday",
@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-25T00:00:32.998994+00:00",
+  "generated_at": "2026-11-25T00:13:00.356998+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -364,10 +364,16 @@
     }
   ],
   "chain_top_hitters": [],
-  "awards_today": 0,
-  "awards_event_total": 470,
+  "awards_today": 1,
+  "awards_event_total": 444,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-24T23:45:17.998768+00:00",
+  "awards_last_updated_at": "2026-11-25T00:13:00.356998+00:00",
   "awards_first_day_partial": false,
-  "award_top_earners": []
+  "award_top_earners": [
+    {
+      "id": 4370545,
+      "name": "ChocolatePie",
+      "awards": 1
+    }
+  ]
 }
