@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-25T00:30:22.973734+00:00",
+  "generated_at": "2026-11-25T00:45:16.557185+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -364,12 +364,17 @@
     }
   ],
   "chain_top_hitters": [],
-  "awards_today": 2,
-  "awards_event_total": 445,
+  "awards_today": 4,
+  "awards_event_total": 447,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-25T00:30:22.973734+00:00",
+  "awards_last_updated_at": "2026-11-25T00:45:16.557185+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4223958,
+      "name": "iieell",
+      "awards": 2
+    },
     {
       "id": 4370545,
       "name": "ChocolatePie",
