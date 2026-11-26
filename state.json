@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-26T05:45:18.774499+00:00",
+  "generated_at": "2026-11-26T06:00:25.977018+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -364,12 +364,17 @@
     }
   ],
   "chain_top_hitters": [],
-  "awards_today": 4,
-  "awards_event_total": 443,
+  "awards_today": 6,
+  "awards_event_total": 445,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-26T05:45:18.774499+00:00",
+  "awards_last_updated_at": "2026-11-26T06:00:25.977018+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4230165,
+      "name": "MeowztheCat",
+      "awards": 2
+    },
     {
       "id": 4055616,
       "name": "Mosiulosiu",
@@ -378,11 +383,6 @@
     {
       "id": 4014455,
       "name": "Babydadi",
-      "awards": 1
-    },
-    {
-      "id": 2481928,
-      "name": "emi804",
       "awards": 1
     }
   ]
