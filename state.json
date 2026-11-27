@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-27T00:15:22.061761+00:00",
+  "generated_at": "2026-11-27T00:30:20.564828+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -364,10 +364,10 @@
     }
   ],
   "chain_top_hitters": [],
-  "awards_today": 3,
-  "awards_event_total": 438,
+  "awards_today": 5,
+  "awards_event_total": 440,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-27T00:15:22.061761+00:00",
+  "awards_last_updated_at": "2026-11-27T00:30:20.564828+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
@@ -376,13 +376,13 @@
       "awards": 1
     },
     {
-      "id": 4233569,
-      "name": "Myrixa",
+      "id": 4564563,
+      "name": "Lucannus",
       "awards": 1
     },
     {
-      "id": 3973713,
-      "name": "OldmanGreen",
+      "id": 4335708,
+      "name": "LyciumWalker",
       "awards": 1
     }
   ]
