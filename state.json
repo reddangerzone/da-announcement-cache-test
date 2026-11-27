@@ -36,7 +36,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-27T21:15:18.846798+00:00",
+  "generated_at": "2026-11-27T21:30:22.492881+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -53,14 +53,6 @@
     {
       "id": 3996981,
       "name": "Alexitobane"
-    },
-    {
-      "id": 4553968,
-      "name": "AngeliousWonder"
-    },
-    {
-      "id": 2781686,
-      "name": "Anhedonic"
     },
     {
       "id": 2933884,
@@ -143,10 +135,6 @@
       "name": "D0MINI"
     },
     {
-      "id": 3028726,
-      "name": "daturadreamz"
-    },
-    {
       "id": 4404877,
       "name": "DeadlyAce"
     },
@@ -205,10 +193,6 @@
     {
       "id": 4068815,
       "name": "Hilgie"
-    },
-    {
-      "id": 4602888,
-      "name": "Holydarthbacon"
     },
     {
       "id": 4188960,
@@ -367,7 +351,7 @@
   "awards_today": 35,
   "awards_event_total": 470,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-27T21:15:18.846798+00:00",
+  "awards_last_updated_at": "2026-11-27T21:30:22.492881+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
