@@ -7,8 +7,27 @@
   "war_id": null,
   "war_label": null,
   "notes": "Stack up! Revives off!",
-  "events": [],
-  "generated_at": "2026-11-28T00:00:38.454867+00:00",
+  "events": [
+    {
+      "title": "Slash Wednesday",
+      "starts_at": "2026-12-09T00:00:00+00:00",
+      "ends_at": "2026-12-09T23:59:59+00:00",
+      "description": "Hospital times reduced by 75%",
+      "source": "torn",
+      "kind": "event",
+      "fixed_start_time": false
+    },
+    {
+      "title": "Christmas town",
+      "starts_at": "2026-12-19T00:00:00+00:00",
+      "ends_at": "2026-12-31T23:59:59+00:00",
+      "description": "Torn's very own festive theme park opens its doors to the public, with citizens able to scour both official and player-created maps to search for treasure and avoid traps!",
+      "source": "torn",
+      "kind": "event",
+      "fixed_start_time": false
+    }
+  ],
+  "generated_at": "2026-11-28T00:15:16.345981+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -320,12 +339,17 @@
     }
   ],
   "chain_top_hitters": [],
-  "awards_today": 2,
-  "awards_event_total": 456,
+  "awards_today": 4,
+  "awards_event_total": 458,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-28T00:00:38.454867+00:00",
+  "awards_last_updated_at": "2026-11-28T00:15:16.345981+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
+    {
+      "id": 4558872,
+      "name": "Maj_saM",
+      "awards": 2
+    },
     {
       "id": 4258558,
       "name": "Charlietwerk",
