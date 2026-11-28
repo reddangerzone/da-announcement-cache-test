@@ -27,7 +27,7 @@
       "fixed_start_time": false
     }
   ],
-  "generated_at": "2026-11-28T08:15:26.177992+00:00",
+  "generated_at": "2026-11-28T08:30:22.674498+00:00",
   "stale_reason": null,
   "halloween_active": false,
   "chain_current": 0,
@@ -342,7 +342,7 @@
   "awards_today": 23,
   "awards_event_total": 477,
   "awards_tracking_started_at": "2026-10-26T00:13:44.382881+00:00",
-  "awards_last_updated_at": "2026-11-28T08:15:26.177992+00:00",
+  "awards_last_updated_at": "2026-11-28T08:30:22.674498+00:00",
   "awards_first_day_partial": false,
   "award_top_earners": [
     {
